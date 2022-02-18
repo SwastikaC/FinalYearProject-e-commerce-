@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/poppins_extra_bold"
+    android:text="WELCOME !! PLEASE LOGIN"
+    android:layout_marginTop="45dp"
+    android:textColor="#0C0C0C"
+    android:layout_gravity="center"
+    android:textSize="30sp" />
+
+
+<EditText
+    android:id="@+id/emailET"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/box_shape"
+    android:paddingLeft="10dp"
+    android:drawableLeft="@drawable/ic_at"
+    android:drawablePadding="16dp"
+    android:fontFamily="@font/poppins_regular"
+    android:hint="email_id"
+    android:textColor="#455A64"
+    android:paddingTop="18dp"
+    android:paddingBottom="17dp"
+    android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/box_shape"
+        android:drawableLeft="@drawable/ic_padlock"
+        android:paddingLeft="10dp"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="Password ID"
+        android:textColor="#455A64"
+        android:inputType="textPassword"
+        android:paddingTop="18dp"
+        android:paddingBottom="17dp"
+        android:textSize="14sp" />
+<!--       android:paddingEnd="100dp"-->
+
+
+
+
+
+
+
+
+    <LinearLayout
+    android:id="@+id/loginLL"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/rectange_box"
+    android:onClick="onLoginClicked"
+    android:orientation="horizontal"
+    android:padding="16dp">
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="LOGIN"
+            android:fontFamily="@font/poppin_semibold"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
