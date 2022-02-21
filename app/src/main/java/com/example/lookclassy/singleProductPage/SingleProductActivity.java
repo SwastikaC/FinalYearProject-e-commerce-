@@ -143,7 +143,6 @@ public class SingleProductActivity extends AppCompatActivity {
                         }
                         addingToggle(false);
                         isAdding = false;
-
                     }
 
                     @Override
@@ -152,6 +151,8 @@ public class SingleProductActivity extends AppCompatActivity {
                         isAdding = false;
                     }
                 });
+
+
             }
             else {
                 Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
