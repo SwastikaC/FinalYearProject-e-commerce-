@@ -29,17 +29,17 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("/api/v1/cart")
-    Call<RegisterResponse> addToCart(@Header("Apikey") String apikey, @Field("p_id") int p, @Field("quantity") int q);
+    Call<AllProductResponse> addToCart(@Header("api_key") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
     @FormUrlEncoded
     @POST("/api/v1/order")
-    Call<RegisterResponse> order(@Header("Apikey") String apikey,
+    Call<RegisterResponse> order(@Header("api_key") String apikey,
                                  @Field("p_type") int p_type,
                                  @Field("address_id") int address_id,
                                  @Field("payment_refrence") String paymentRefrence);
 
     @GET("/api/v1/order")
-    Call<OrderHistoryResponse> orderHistory(@Header("Apikey") String apikey
+    Call<OrderHistoryResponse> orderHistory(@Header("api_key") String apikey
     );
 
 
@@ -57,13 +57,13 @@ public interface ApiService {
     Call<AllProductResponse> getProductsByCategory(@Query("c_id") int catID);
 
     @GET("/api/v1/cart")
-    Call<AllProductResponse> getMyCart(@Header("Apikey") String apikey);
+    Call<AllProductResponse> getMyCart(@Header("api_key") String apikey);
 
     @DELETE("/api/v1/cart")
-    Call<RegisterResponse> deleteFromCart(@Header("Apikey") String apikey, @Query("c_id") int cartID);
+    Call<RegisterResponse> deleteFromCart(@Header("api_key") String apikey, @Query("c_id") int cartID);
 
     @GET("/api/v1/address")
-    Call<AddressResponse> getMyAddresses(@Header("Apikey") String apikey);
+    Call<AddressResponse> getMyAddresses(@Header("api_key") String apikey);
 
 
 }

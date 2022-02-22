@@ -89,7 +89,7 @@ public class CartFragment extends Fragment {
                         allProductResponse = response.body();
                         products = response.body().getProducts();
                         loadCartList();
-                        setPrice();
+                        setPrice(products);
                     }
                 }
             }
@@ -117,7 +117,7 @@ public class CartFragment extends Fragment {
                         if (response.isSuccessful()) {
                             products.remove(products.get(position));
                             shopAdapter.notifyItemRemoved(position);
-                            setPrice();
+                            setPrice(products);
                         }
                     }
 
@@ -137,14 +137,31 @@ public class CartFragment extends Fragment {
         getCartItems();
     }
 
-    private void setPrice() {
+//    private void setPrice() {
+//        double totalPrice = 0;
+//        for (int i = 0; i < products.size(); i++) {
+//            if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null)
+//                totalPrice = totalPrice + products.get(i).getDiscountPrice();
+//            else
+//                totalPrice = totalPrice + products.get(i).getPrice();
+//        }
+//        totalPriceTv.setText("( Rs. " + totalPrice + " )");
+//    }
+
+    private void setPrice(List<Product> data) {
+        List<Product> newData = data;
+
         double totalPrice = 0;
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null)
-                totalPrice = totalPrice + products.get(i).getDiscountPrice();
+        for (int i = 0; i < newData.size(); i++) {
+            Product product = newData.get(i);
+            int price = product.getPrice();
+            int q = product.getCartQuantity();
+            if (products.get(i).getPrice() != 0 || products.get(i).getPrice() != null)
+                totalPrice = totalPrice + price * q;
             else
-                totalPrice = totalPrice + products.get(i).getPrice();
+                totalPrice = totalPrice + price * q;
         }
-        totalPriceTv.setText("( Rs. " + totalPrice + " )");
+        totalPriceTv.setText("Rs. " + totalPrice);
     }
+
 }

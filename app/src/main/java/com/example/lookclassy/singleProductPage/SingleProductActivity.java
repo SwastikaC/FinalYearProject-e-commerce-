@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.ApiClient;
+import com.example.lookclassy.api.response.AllProductResponse;
 import com.example.lookclassy.api.response.Product;
 import com.example.lookclassy.api.response.RegisterResponse;
 import com.example.lookclassy.api.response.Slider;
@@ -133,11 +134,11 @@ public class SingleProductActivity extends AppCompatActivity {
             if (!isAdding) {
                 isAdding = true;
                 addingToggle(true);
-                String key = SharedPrefUtils.getString(this, getString(R.string.api_key));
-                Call<RegisterResponse> cartCall = ApiClient.getClient().addToCart(key, product.getId(), quantity);
-                cartCall.enqueue(new Callback<RegisterResponse>() {
+                String apiKey = SharedPrefUtils.getString(this, getString(R.string.api_key));
+                Call<AllProductResponse> cartCall = ApiClient.getClient().addToCart(apiKey, product.getId(), quantity);
+                cartCall.enqueue(new Callback<AllProductResponse>() {
                     @Override
-                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                    public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
                         if (response.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), response.body().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -146,7 +147,7 @@ public class SingleProductActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                    public void onFailure(Call<AllProductResponse> call, Throwable t) {
                         addingToggle(false);
                         isAdding = false;
                     }
