@@ -76,6 +76,7 @@
                 android:layout_marginLeft="10dp"
                 android:maxLines="2"
                 android:text="Rs 2000"
+                android:textStyle="bold"
                 android:textColor="@color/primary"
                 android:textSize="14sp" />
         </LinearLayout>

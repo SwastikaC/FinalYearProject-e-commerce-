@@ -31,11 +31,14 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class SingleProductActivity extends AppCompatActivity {
+//    public static String DATA_KEY = "ds";
+//    public static String SINGLE_DATA_KEY = "sds";
     public static String key = "pKey";
     Product product;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV;
+    ImageView backIV, plusIV, minusIV, wishlistIV;
+
     TextView name, price, desc, oldPrice, quantityTV;
     LinearLayout addToCartLL;
     int quantity = 1;
@@ -53,6 +56,7 @@ public class SingleProductActivity extends AppCompatActivity {
         imageSlider = findViewById(R.id.imageSlider);
         name = findViewById(R.id.productNameTV);
         price = findViewById(R.id.productPriceTV);
+
         quantityTV = findViewById(R.id.quantityTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
@@ -156,7 +160,7 @@ public class SingleProductActivity extends AppCompatActivity {
 
             }
             else {
-                Toast.makeText(getApplicationContext(), "Adding Already!!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Added Already!!", Toast.LENGTH_SHORT).show();
             }
 
         });

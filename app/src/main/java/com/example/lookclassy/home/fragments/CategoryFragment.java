@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.response.Category;
@@ -21,13 +22,11 @@ import com.example.lookclassy.utils.DataHolder;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CategoryFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
+
 public class CategoryFragment extends Fragment {
     RecyclerView fullCatRV;
+    ImageView backIV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

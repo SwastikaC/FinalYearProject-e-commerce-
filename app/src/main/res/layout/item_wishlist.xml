@@ -41,8 +41,6 @@
                 android:textStyle="bold" />
 
 
-
-
         </LinearLayout>
 
         <LinearLayout
@@ -69,6 +67,7 @@
                 android:layout_marginLeft="10dp"
                 android:maxLines="2"
                 android:text="Rs 3000"
+                android:textStyle="bold"
                 android:textColor="@color/primary"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -83,7 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="2"
-                android:text="Qty:"
+                android:text="Size:"
                 android:textColor="@color/black"
                 android:textSize="13sp" />
 
@@ -93,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/small_spacing"
                 android:maxLines="2"
-                android:text="2"
+                android:text="Small"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -108,17 +107,16 @@
                 android:id="@+id/wishlisttrashIV"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_trash" />
+                android:src="@drawable/ic_trashs" />
 
             <ImageView
-                android:id="@+id/addwishlistIV"
+                android:id="@+id/addToCartLL"
                 android:layout_width="300dp"
-                android:layout_height="500dp"
+                android:layout_height="600dp"
                 android:layout_marginStart="180dp"
                 android:background="@drawable/rectange_box"
                 android:src="@drawable/ic_shoppingcart"
                 app:tint="@color/white" />
-
 
 
     </RelativeLayout>

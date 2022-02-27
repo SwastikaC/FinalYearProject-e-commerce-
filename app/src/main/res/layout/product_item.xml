@@ -14,15 +14,27 @@
         android:layout_height="200dp"
         android:src="@drawable/image01"
         android:layout_marginBottom="10dp" />
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <TextView
         android:id="@+id/productNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:maxLines="2"
-        android:text="Satin One Shoulder Puff  Dress"
+        android:text=" One Shoulder Dress"
         android:textColor="@color/black"
         android:textSize="16sp" />
+    <ImageView
+            android:id="@+id/wishlishIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="190dp"
+            android:src="@drawable/ic_heart">
+
+        </ImageView>
+
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/discountPriceTV"
@@ -32,6 +44,9 @@
         android:maxLines="2"
         android:textColor="@color/primary"
         android:textSize="18sp" />
+
+
+
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -43,7 +43,6 @@ public interface ApiService {
     );
 
 
-
     @GET("/api/v1/get-all-products")
     Call<AllProductResponse> getAllProducts();
 

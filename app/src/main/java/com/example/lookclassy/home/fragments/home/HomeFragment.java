@@ -1,5 +1,6 @@
 package com.example.lookclassy.home.fragments.home;
 
+
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -31,6 +32,7 @@ import com.example.lookclassy.home.fragments.home.adapters.CategoryAdapter;
 import com.example.lookclassy.home.fragments.home.adapters.ShopAdapter;
 import com.example.lookclassy.home.fragments.home.adapters.SliderAdapter;
 import com.example.lookclassy.utils.DataHolder;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -50,11 +52,24 @@ public class HomeFragment extends Fragment {
     SliderView imageSlider;
 
 
+//    viewall.setOnClickListener(new View.OnClickListener()
+//
+//    {
+//        @Override
+//        public void onClick (View v){
+//        BottomNavigationView.setItemSelected(R.id.categoryItemLL, true);
+//    }
+//    });
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
+
+
+
+
     }
 
     @Override
@@ -127,6 +142,9 @@ public class HomeFragment extends Fragment {
         });
 
     }
+
+
+
 
     private void showCategories(List<Category> categories) {
         List<Category> temp;

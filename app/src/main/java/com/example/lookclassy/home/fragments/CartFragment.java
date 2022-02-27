@@ -154,9 +154,9 @@ public class CartFragment extends Fragment {
         double totalPrice = 0;
         for (int i = 0; i < newData.size(); i++) {
             Product product = newData.get(i);
-            int price = product.getPrice();
+            int price = product.getDiscountPrice();
             int q = product.getCartQuantity();
-            if (products.get(i).getPrice() != 0 || products.get(i).getPrice() != null)
+            if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null)
                 totalPrice = totalPrice + price * q;
             else
                 totalPrice = totalPrice + price * q;

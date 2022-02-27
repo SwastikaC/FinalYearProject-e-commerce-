@@ -42,7 +42,8 @@ public class Product implements Serializable {
     @Expose
     private Integer cartID;
 
-    public Integer getId() {
+    public Integer
+    getId() {
         return id;
     }
 
