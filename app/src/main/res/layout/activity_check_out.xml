@@ -6,41 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".checkout.CheckOutActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/checkOutLL"
         android:orientation="vertical">
 
-        <RelativeLayout
+
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:gravity="center_vertical">
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/backIv"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="@dimen/small_spacing"
-                android:backgroundTint="@color/grey_divider"
-                android:background="@drawable/rectange_box"
-                android:padding="4dp"
-                android:src="@drawable/ic_round_arrow_back_ios_new_24"
-                app:tint="@color/priceGray" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:gravity="start"
+                android:background="@color/primary">
 
-                android:text="Order Details"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
 
-        </RelativeLayout>
+                <ImageView
+                    android:id="@+id/backIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/large_spacing"
+                    android:layout_marginTop="@dimen/large_spacing"
+                    android:layout_marginEnd="@dimen/large_spacing"
+                    android:layout_marginBottom="@dimen/large_spacing"
+                    android:elevation="20dp"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Checkout"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+
+                    />
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -58,9 +68,9 @@
             android:id="@+id/allProductsRV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingStart="@dimen/normal_spacing"
             android:paddingTop="@dimen/normal_spacing"
             android:paddingBottom="@dimen/normal_spacing"
-            android:paddingStart="@dimen/normal_spacing"
 
             />
 
@@ -104,10 +114,10 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:drawableEnd="@drawable/ic_round_arrow_forward_ios_24"
                         android:id="@+id/cityStreetTV"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_round_arrow_forward_ios_24"
                         android:paddingStart="@dimen/normal_spacing"
                         android:paddingTop="@dimen/small_spacing"
 
@@ -156,47 +166,122 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <LinearLayout
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/normal_spacing"
-            android:layout_marginEnd="@dimen/normal_spacing"
-            android:orientation="horizontal">
+            android:background="@drawable/box_shape_selected">
 
 
             <ImageView
 
-                android:background="@drawable/box_shape_selected"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="@dimen/medium_spacing"
-                android:src="@drawable/cod"
-                app:civ_border_color="@color/primary"
-                app:civ_border_width="1dp" />
-
-
-            <ImageView
+                android:id="@+id/khaltiPayment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="@dimen/medium_spacing"
-                android:src="@drawable/khalti"
-                app:civ_border_color="@color/grey_divider"
-                app:civ_border_width="1dp" />
+                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginEnd="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/margin_ten"
+                android:src="@drawable/khalti" />
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/normal_spacing"
+                android:layout_toRightOf="@id/khaltiPayment"
+                android:gravity="center_vertical"
+                android:text="Khalti App"
+                android:textColor="@color/black"
+                android:textColorHint="@color/priceGray"
+                android:textSize="16sp" />
 
             <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingStart="350dp"
+                android:src="@drawable/ic_profile_arrow" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:background="@drawable/box_shape">
+
+
+            <ImageView
+
+                android:id="@+id/cashPayment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
                 android:layout_marginStart="@dimen/normal_spacing"
-                android:background="@drawable/box_shape"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:padding="@dimen/medium_spacing"
-                android:src="@drawable/esewa"
-                app:civ_border_color="@color/grey_divider"
-                app:civ_border_width="1dp" />
+                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginEnd="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/margin_ten"
+                android:src="@drawable/cod" />
+
+            <TextView
+                android:id="@+id/paybycash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/normal_spacing"
+                android:layout_toRightOf="@id/cashPayment"
+                android:gravity="center_vertical"
+                android:text="Cash on delivery"
+                android:textColor="@color/black"
+                android:textColorHint="@color/priceGray"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingStart="350dp"
+                android:src="@drawable/ic_profile_arrow" />
 
 
-        </LinearLayout>
+        </RelativeLayout>
+
+
+        <!--            <ImageView-->
+
+        <!--                android:background="@drawable/box_shape_selected"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="50dp"-->
+        <!--                android:padding="@dimen/medium_spacing"-->
+        <!--                android:src="@drawable/cod"-->
+        <!--                app:civ_border_color="@color/primary"-->
+        <!--                app:civ_border_width="1dp" />-->
+
+
+        <!--            <ImageView-->
+        <!--                android:layout_marginStart="@dimen/normal_spacing"-->
+        <!--                android:background="@drawable/box_shape"-->
+        <!--                android:layout_width="70dp"-->
+        <!--                android:layout_height="70dp"-->
+        <!--                android:padding="@dimen/medium_spacing"-->
+        <!--                android:src="@drawable/khalti"-->
+        <!--                app:civ_border_color="@color/grey_divider"-->
+        <!--                app:civ_border_width="1dp" />-->
+
+
+        <!--        </LinearLayout>-->
 
         <TextView
             android:layout_width="match_parent"
@@ -255,6 +340,7 @@
 
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -263,18 +349,18 @@
             android:paddingStart="@dimen/normal_spacing"
             android:paddingEnd="@dimen/normal_spacing">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Discount:" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Discount:" />
 
-            <TextView
-                android:id="@+id/discountTV"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:text="- Rs. 1000"
-                android:textColor="@color/black" />
+                        <TextView
+                            android:id="@+id/discountTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:text="- Rs. 1000"
+                            android:textColor="@color/black" />
         </LinearLayout>
 
         <LinearLayout
@@ -305,40 +391,38 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/checkOutLL"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/normal_spacing"
-        android:layout_marginTop="@dimen/small_spacing"
-        android:layout_marginEnd="@dimen/normal_spacing"
-        android:layout_marginBottom="@dimen/normal_spacing"
-        android:background="@drawable/rectange_box"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+        <LinearLayout
+            android:id="@+id/checkOutLL"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/normal_spacing"
+            android:layout_marginTop="@dimen/small_spacing"
             android:layout_marginEnd="@dimen/normal_spacing"
-            android:src="@drawable/ic_bag"
-            app:tint="@color/white" />
+            android:layout_marginBottom="@dimen/normal_spacing"
+            android:background="@drawable/rectange_box"
+            android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Checkout"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="@dimen/normal_spacing"
+                android:src="@drawable/ic_bag"
+                app:tint="@color/white" />
 
-        <TextView
-            android:id="@+id/totalPriceTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_spacing"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Checkout"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
-
-    </LinearLayout>
+            <TextView
+                android:id="@+id/totalPriceTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/small_spacing"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
 </RelativeLayout>

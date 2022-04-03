@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.ApiClient;
 import com.example.lookclassy.api.response.AddressResponse;
-import com.example.lookclassy.api.response.Adress;
+import com.example.lookclassy.api.response.Address;
 import com.example.lookclassy.utils.SharedPrefUtils;
 
 import java.util.List;
@@ -43,7 +43,7 @@ public class AddressActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<AddressResponse> call, Response<AddressResponse> response) {
                 if (response.isSuccessful()) {
-                    listAddress(response.body().getAdresses());
+                    listAddress(response.body().getAddresses());
                 }
             }
 
@@ -54,15 +54,15 @@ public class AddressActivity extends AppCompatActivity {
         });
     }
 
-    private void listAddress(List<Adress> adresses) {
+    private void listAddress(List<Address> addresses) {
         addressRV.setHasFixedSize(true);
         addressRV.setLayoutManager(new LinearLayoutManager(this));
-        AddressAdapter addressAdapter = new AddressAdapter(adresses, this);
+        AddressAdapter addressAdapter = new AddressAdapter(addresses, this);
         addressAdapter.setOnAddressItemClickListener(new AddressAdapter.OnAddressItemClickListener() {
             @Override
-            public void onAddressClick(int position, Adress adress) {
+            public void onAddressClick(int position, Address address) {
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra(ADDRESS_SELECTED_KEY, adress);
+                resultIntent.putExtra(ADDRESS_SELECTED_KEY, address);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
             }

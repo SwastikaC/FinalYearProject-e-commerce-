@@ -45,10 +45,12 @@ public class CartFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_cart, container, false);
     }
 
     @Override
+
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         allProductRV = view.findViewById(R.id.allProductRV);
@@ -131,22 +133,12 @@ public class CartFragment extends Fragment {
         allProductRV.setAdapter(shopAdapter);
     }
 
+
     @Override
     public void onResume() {
         super.onResume();
         getCartItems();
     }
-
-//    private void setPrice() {
-//        double totalPrice = 0;
-//        for (int i = 0; i < products.size(); i++) {
-//            if (products.get(i).getDiscountPrice() != 0 || products.get(i).getDiscountPrice() != null)
-//                totalPrice = totalPrice + products.get(i).getDiscountPrice();
-//            else
-//                totalPrice = totalPrice + products.get(i).getPrice();
-//        }
-//        totalPriceTv.setText("( Rs. " + totalPrice + " )");
-//    }
 
     private void setPrice(List<Product> data) {
         List<Product> newData = data;

@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.ApiClient;
-import com.example.lookclassy.api.response.Adress;
+import com.example.lookclassy.api.response.Address;
 import com.example.lookclassy.api.response.AllProductResponse;
 import com.example.lookclassy.api.response.Product;
 import com.example.lookclassy.api.response.RegisterResponse;
@@ -39,7 +39,7 @@ public class CheckOutActivity extends AppCompatActivity {
     ImageView backIv;
     RecyclerView allProductsRV;
     LinearLayout addressLL, checkOutLL;
-    Adress address;
+    Address address;
     TextView emptyAddressTv, cityStreetTV, provinceTV, totalTV, subTotalTV, shippingTV, totalPriceTv, discountTV;
     List<Product> products;
     double subTotalPrice = 0;
@@ -123,17 +123,17 @@ public class CheckOutActivity extends AppCompatActivity {
 
             assert data != null;
             if (data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY) != null) {
-                showSelectedAddress((Adress) data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY));
+                showSelectedAddress((Address) data.getSerializableExtra(AddressActivity.ADDRESS_SELECTED_KEY));
 
             }
         }
     }
 
-    private void showSelectedAddress(Adress adress) {
-        address = adress;
+    private void showSelectedAddress(Address address) {
+        this.address = address;
         emptyAddressTv.setVisibility(View.GONE);
-        cityStreetTV.setText(adress.getCity() + " " + adress.getStreet());
-        provinceTV.setText(adress.getProvince());
+        cityStreetTV.setText(address.getCity() + " " + address.getStreet());
+        provinceTV.setText(address.getProvince());
         addressLL.setVisibility(View.VISIBLE);
     }
 

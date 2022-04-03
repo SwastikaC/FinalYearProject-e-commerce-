@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Product implements Serializable {
 
-    @SerializedName("id")
+    @SerializedName("product_id")
     @Expose
     private Integer id;
     @SerializedName("name")
@@ -42,8 +42,8 @@ public class Product implements Serializable {
     @Expose
     private Integer cartID;
 
-    public Integer
-    getId() {
+
+    public Integer getId() {
         return id;
     }
 

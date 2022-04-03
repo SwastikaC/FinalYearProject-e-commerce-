@@ -1,4 +1,5 @@
 package com.example.lookclassy.singleProductPage;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -9,13 +10,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.lookclassy.R;
+
 import com.example.lookclassy.api.ApiClient;
 import com.example.lookclassy.api.response.AllProductResponse;
 import com.example.lookclassy.api.response.Product;
 import com.example.lookclassy.api.response.RegisterResponse;
+import com.example.lookclassy.api.response.SingleProductResponse;
 import com.example.lookclassy.api.response.Slider;
 import com.example.lookclassy.home.fragments.home.adapters.SliderAdapter;
 import com.example.lookclassy.utils.SharedPrefUtils;
@@ -29,16 +30,14 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
 public class SingleProductActivity extends AppCompatActivity {
-//    public static String DATA_KEY = "ds";
-//    public static String SINGLE_DATA_KEY = "sds";
-    public static String key = "pKey";
+    public static String DATA_KEY = "ds";
+    public static String SINGLE_DATA_KEY = "sds";
+    public static String key;
     Product product;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV, wishlistIV;
-
+    ImageView backIV, plusIV, minusIV;
     TextView name, price, desc, oldPrice, quantityTV;
     LinearLayout addToCartLL;
     int quantity = 1;
@@ -49,14 +48,11 @@ public class SingleProductActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         getWindow().setStatusBarColor(Color.WHITE);
-
-
         setContentView(R.layout.activity_single_product);
         backIV = findViewById(R.id.backIV);
         imageSlider = findViewById(R.id.imageSlider);
         name = findViewById(R.id.productNameTV);
         price = findViewById(R.id.productPriceTV);
-
         quantityTV = findViewById(R.id.quantityTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
@@ -65,17 +61,39 @@ public class SingleProductActivity extends AppCompatActivity {
         plusIV = findViewById(R.id.plusIV);
         minusIV = findViewById(R.id.minusIV);
         setOnclickListners();
-        if (getIntent().getSerializableExtra(key) != null) {
-            product = (Product) getIntent().getSerializableExtra(key);
+        if (getIntent().getSerializableExtra(DATA_KEY) != null) {
+            product = (Product) getIntent().getSerializableExtra(DATA_KEY);
             setProduct(product);
         }
+        System.out.println(product.getId());
+    }
+
+    private void getProductOnline(int intExtra) {
+        Call<SingleProductResponse> productResponseCall = ApiClient.getClient().getProductById(intExtra);
+        productResponseCall.enqueue(new Callback<SingleProductResponse>() {
+            @Override
+            public void onResponse(Call<SingleProductResponse> call, Response<SingleProductResponse> response) {
+                if (response.isSuccessful()) {
+                    if (!response.body().getError()) {
+                        product = response.body().getProduct();
+                        setProduct(product);
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<SingleProductResponse> call, Throwable t) {
+
+            }
+        });
 
     }
+
 
     private void setProduct(Product product) {
         setSliders(product.getImages());
         name.setText(product.getName());
-
         if (product.getDiscountPrice() == 0 || product.getDiscountPrice() == null) {
             price.setText("Rs. " + product.getPrice());
             oldPrice.setVisibility(View.INVISIBLE);
@@ -127,7 +145,7 @@ public class SingleProductActivity extends AppCompatActivity {
         minusIV.setOnClickListener(v -> {
 
             if (quantity < 2)
-                Toast.makeText(this, "Quantity should be atleast 1", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Quantity should be at least 1", Toast.LENGTH_SHORT).show();
             else
                 quantity--;
             setQuantity();
@@ -138,7 +156,8 @@ public class SingleProductActivity extends AppCompatActivity {
             if (!isAdding) {
                 isAdding = true;
                 addingToggle(true);
-                String apiKey = SharedPrefUtils.getString(this, getString(R.string.api_key));
+               String apiKey = SharedPrefUtils.getString(this, getString(R.string.api_key));
+               //Toast.makeText(SingleProductActivity.this, apiKey, Toast.LENGTH_LONG).show();
                 Call<AllProductResponse> cartCall = ApiClient.getClient().addToCart(apiKey, product.getId(), quantity);
                 cartCall.enqueue(new Callback<AllProductResponse>() {
                     @Override
@@ -164,6 +183,7 @@ public class SingleProductActivity extends AppCompatActivity {
             }
 
         });
+
     }
 
     private void setQuantity() {

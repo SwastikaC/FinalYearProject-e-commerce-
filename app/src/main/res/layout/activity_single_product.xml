@@ -50,7 +50,7 @@
                     android:src="@drawable/ic_round_arrow_back_ios_new_24" />
 
                 <ImageView
-                    android:id="@+id/wishlishIV"
+                    android:id="@+id/addToWishlist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="350dp"
@@ -58,7 +58,7 @@
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="@dimen/large_spacing"
                     android:elevation="20dp"
-                    android:src="@drawable/ic_heart" />
+                    android:src="@drawable/ic_favorite" />
 
 
             </RelativeLayout>
@@ -162,7 +162,6 @@
                     android:src="@drawable/ic_minus" />
 
 
-
                 <TextView
                     android:id="@+id/quantityTV"
                     android:layout_width="wrap_content"
@@ -182,6 +181,100 @@
                     android:src="@drawable/ic_round_add_24" />
 
             </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_spacing"
+                android:layout_weight="1"
+                android:text="Size"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/sizeIV"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="50dp"
+                    android:background="@drawable/rectange_box"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="S" />
+
+                <ImageView
+                    android:id="@+id/mediumIV"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="110dp"
+                    android:background="@drawable/rectange_box"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="130dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="M" />
+
+
+                <ImageView
+                    android:id="@+id/largeIV"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="170dp"
+                    android:background="@drawable/rectange_box"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="190dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="L" />
+
+                <ImageView
+                    android:id="@+id/xlIV"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="230dp"
+                    android:background="@drawable/rectange_box"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="245dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="25dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:text="XL" />
+
+
+            </RelativeLayout>
+
 
             <TextView
                 android:layout_width="wrap_content"

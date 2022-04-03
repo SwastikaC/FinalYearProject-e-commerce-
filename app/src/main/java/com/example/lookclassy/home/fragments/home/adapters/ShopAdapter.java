@@ -12,12 +12,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.response.Product;
 import com.example.lookclassy.singleProductPage.SingleProductActivity;
-import com.squareup.picasso.Picasso;
+
 
 import java.util.List;
+
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder> {
     List<Product> productDataList;
@@ -27,13 +29,13 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     CartItemClick cartItemClick;
     Boolean removeEnabled = true;
 
+
     public ShopAdapter(List<Product> productDataList, Context context, Boolean isCart) {
         this.productDataList = productDataList;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
         this.isCart = isCart;
     }
-
 
     public void setCartItemClick(CartItemClick cartItemClick) {
         this.cartItemClick = cartItemClick;
@@ -67,7 +69,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             @Override
             public void onClick(View v) {
                 Intent productPage = new Intent(context, SingleProductActivity.class);
-                productPage.putExtra(SingleProductActivity.key, productDataList.get(holder.getAdapterPosition()));
+                productPage.putExtra(SingleProductActivity.DATA_KEY, productDataList.get(holder.getAdapterPosition()));
+                System.out.println(productDataList.get(holder.getAdapterPosition()));
                 context.startActivity(productPage);
             }
         });
@@ -83,19 +86,20 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
                 holder.removeCartIV.setVisibility(View.GONE);
                 holder.mainLL.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                setMargins(holder.mainLL,0,0,16,0);
+                setMargins(holder.mainLL, 0, 0, 16, 0);
             }
             holder.quantityTV.setText(productDataList.get(position).getCartQuantity() + "");
         }
     }
 
-    public static void setMargins (View v, int l, int t, int r, int b) {
+    public static void setMargins(View v, int l, int t, int r, int b) {
         if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
             p.setMargins(l, t, r, b);
             v.requestLayout();
         }
     }
+
     @Override
     public int getItemCount() {
         return productDataList.size();
@@ -126,4 +130,3 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         public void onRemoveCart(int position);
     }
 }
-

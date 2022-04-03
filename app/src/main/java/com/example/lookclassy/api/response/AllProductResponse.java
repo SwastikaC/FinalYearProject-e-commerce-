@@ -8,6 +8,7 @@ import java.util.List;
 
 public class AllProductResponse implements Serializable {
 
+
     @SerializedName("products")
     @Expose
     private List<Product> products = null;

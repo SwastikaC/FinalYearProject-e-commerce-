@@ -8,7 +8,6 @@ import java.io.Serializable;
 
 public class Category implements Serializable {
 
-
     @SerializedName("id")
     @Expose
     private Integer id;

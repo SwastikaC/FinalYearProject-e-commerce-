@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -14,7 +13,7 @@ import com.example.lookclassy.R;
 import com.example.lookclassy.home.fragments.CartFragment;
 import com.example.lookclassy.home.fragments.CategoryFragment;
 import com.example.lookclassy.home.fragments.home.HomeFragment;
-import com.example.lookclassy.home.fragments.ProfileFragment;
+import com.example.lookclassy.home.fragments.MoreFragment;
 import com.example.lookclassy.home.fragments.WishListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -25,19 +24,21 @@ public class MainActivity extends AppCompatActivity {
         CategoryFragment categoryFragment;
         CartFragment cartFragment;
         WishListFragment wishListFragment;
-        ProfileFragment profileFragment;
+        MoreFragment moreFragment;
         Fragment currentFragment;
 
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+            getWindow().setStatusBarColor(Color.WHITE);
             setContentView(R.layout.activity_main);
             bottomNavigationView = findViewById(R.id.mainBottomNav);
             homeFragment = new HomeFragment();
+            homeFragment.setBottomNavigationView(bottomNavigationView);
             currentFragment = homeFragment;
             getSupportFragmentManager().beginTransaction().add(R.id.mainFrame, homeFragment).commit();
-
             bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
                 @Override
                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -70,17 +71,16 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     }
-                    else if (item.getTitle().equals("Me")) {
-                        if (profileFragment == null)
-                            profileFragment = new ProfileFragment();
-                        changeFragment(profileFragment);
+                    else if (item.getTitle().equals("More")) {
+                        if (moreFragment == null)
+                            moreFragment = new MoreFragment();
+                        changeFragment(moreFragment);
                         return true;
 
                     }
                     return false;
                 }
             });
-
 
         }
 

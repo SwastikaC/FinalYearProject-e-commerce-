@@ -29,9 +29,9 @@
     android:fontFamily="@font/poppins_regular"
     android:hint="email_id"
     android:textColor="#455A64"
-    android:paddingTop="18dp"
-    android:paddingBottom="17dp"
-    android:textSize="14sp" />
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:textSize="16sp" />
 
     <EditText
         android:id="@+id/passwordET"
@@ -46,9 +46,9 @@
         android:hint="Password ID"
         android:textColor="#455A64"
         android:inputType="textPassword"
-        android:paddingTop="18dp"
-        android:paddingBottom="17dp"
-        android:textSize="14sp" />
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="16sp" />
 <!--       android:paddingEnd="100dp"-->
 
 
@@ -78,6 +78,11 @@
             android:textSize="20sp"/>
 
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/circularProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
 </LinearLayout>

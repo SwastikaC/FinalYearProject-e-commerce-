@@ -3,21 +3,28 @@ package com.example.lookclassy.api;
 import com.example.lookclassy.api.response.AddressResponse;
 import com.example.lookclassy.api.response.AllProductResponse;
 import com.example.lookclassy.api.response.CategoryResponse;
+import com.example.lookclassy.api.response.DashResponse;
 import com.example.lookclassy.api.response.LoginResponse;
 import com.example.lookclassy.api.response.OrderHistoryResponse;
 import com.example.lookclassy.api.response.RegisterResponse;
+import com.example.lookclassy.api.response.SingleProductResponse;
 import com.example.lookclassy.api.response.SliderResponse;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface ApiService {
+
 
     @FormUrlEncoded
     @POST("/api/v1/login")
@@ -65,6 +72,37 @@ public interface ApiService {
     Call<AddressResponse> getMyAddresses(@Header("api_key") String apikey);
 
 
+    @GET("/api/v1/dash")
+    Call<DashResponse> getDash(@Header("api_key") String apikey);
+
+    @DELETE("/api/v1/category")
+    Call<RegisterResponse> deleteCategory(@Header("api_key") String apikey, @Query("c_id") int id);
+
+    @GET("/api/v1/wishlist")
+    Call<AllProductResponse> wishlist(@Header("api_key") String apikey);
+    @Multipart
+    @POST("/api/v1/upload-product")
+    Call<RegisterResponse> uploadProduct(
+            @Header("api_key") String apikey,
+            @Part MultipartBody.Part[] files,
+            @Part("name") RequestBody name,
+            @Part("price") RequestBody price,
+            @Part("description") RequestBody description,
+            @Part("quantity") RequestBody quantity,
+            @Part("discount_price") RequestBody discount_price,
+            @Part("categories") RequestBody categories
+    );
+
+    @Multipart
+    @POST("/api/v1/upload-category")
+    Call<RegisterResponse> uploadCategory(
+            @Header("api_key") String apikey,
+            @Part MultipartBody.Part file,
+            @Part("name") RequestBody name
+
+    );
+    @GET("/api/v1/get-all-products")
+    Call<SingleProductResponse> getProductById(@Query("id") int c_id);
+
+
 }
-
-

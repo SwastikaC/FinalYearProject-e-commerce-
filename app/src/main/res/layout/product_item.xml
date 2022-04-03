@@ -25,12 +25,13 @@
         android:text=" One Shoulder Dress"
         android:textColor="@color/black"
         android:textSize="16sp" />
-    <ImageView
-            android:id="@+id/wishlishIV"
+
+        <ImageView
+            android:id="@+id/addToWishlist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="190dp"
-            android:src="@drawable/ic_heart">
+            android:src="@drawable/ic_favorite">
 
         </ImageView>
 

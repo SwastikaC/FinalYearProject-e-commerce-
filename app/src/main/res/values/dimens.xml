@@ -4,4 +4,6 @@
     <dimen name="large_spacing">20dp</dimen>
     <dimen name="small_spacing">5dp</dimen>
     <dimen name="medium_spacing">8dp</dimen>
+    <dimen name="margin_ten" >10dp</dimen>
+    <dimen name="margin_five" >5dp</dimen>
 </resources>

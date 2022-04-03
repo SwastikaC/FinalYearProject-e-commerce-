@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".More.TermsAndConditionActivity"
+    android:orientation="horizontal">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/primary">
+
+
+            <ImageView
+                android:id="@+id/aboutusbackIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/large_spacing"
+                android:layout_marginTop="@dimen/large_spacing"
+                android:layout_marginEnd="@dimen/large_spacing"
+                android:layout_marginBottom="@dimen/large_spacing"
+                android:elevation="20dp"
+                android:src="@drawable/ic_back"
+                app:tint="@color/white" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="About Us"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+
+                />
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+
+        android:layout_marginStart="-400dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="18dp"
+            android:orientation="vertical">
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:text="LOOK CLASSY"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textColor="@color/primary"-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:textStyle="bold"/>-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="54dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/about1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LOOK CLASSY"
+                            android:layout_gravity="center"
+                            android:textSize="16dp"
+                            android:textColor="@color/primary"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:text="is a unique shopping app with a distinctive tone focusing on
+women's fashion. We offer affordable products including women's clothing,
+accessories, shoes, bags and more. The brand was founded in 2015.
+Its business covers more than 220 countries and regions around the world.
+Our vision is 'bringing happiness into every woman's life.'
+"
+                android:justificationMode="inter_word"
+                android:textSize="14dp"
+                android:textColor="@color/priceGray"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OUR MISSION"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:textColor="@color/primary"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:text="Look Classy is on a mission to build an one-stop-shop for the modern yet economical
+fashionista. We offer customers an inspiring place to discover the latest and
+ most-wanted products with affordable prices.
+
+"
+                android:justificationMode="inter_word"
+                android:textSize="14dp"
+                android:textColor="@color/priceGray"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+</ScrollView>
+</LinearLayout>

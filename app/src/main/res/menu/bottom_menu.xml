@@ -16,12 +16,12 @@
         android:title="Cart" />
     <item
         android:id="@+id/wishlist"
-        android:icon="@drawable/ic_heart"
+        android:icon="@drawable/ic_favorite"
         android:title="Wishlist" />
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_user"
-        android:title="Me" />
+        android:id="@+id/more"
+        android:icon="@drawable/ic_setting"
+        android:title="More" />
 
 
 </menu>

@@ -1,7 +1,6 @@
 package com.example.lookclassy.checkout.address;
 
 import android.content.Context;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lookclassy.R;
-import com.example.lookclassy.api.response.Adress;
+import com.example.lookclassy.api.response.Address;
 
 import java.util.List;
 
 public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressViewHolder> {
-    List<Adress> adressList;
+    List<Address> AddressList;
     Context context;
     LayoutInflater inflater;
     OnAddressItemClickListener onAddressItemClickListener;
 
-    public AddressAdapter(List<Adress> adressList, Context context) {
-        this.adressList = adressList;
+    public AddressAdapter(List<Address> addressList, Context context) {
+        this.AddressList = addressList;
         this.context = context;
         inflater = LayoutInflater.from(context);
     }
@@ -41,21 +40,20 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
 
     @Override
     public void onBindViewHolder(@NonNull AddressViewHolder holder, int position) {
-        Adress adress = adressList.get(position);
-        holder.cityStreetTV.setText(adress.getCity() + " " + adress.getStreet());
-        holder.provinceTV.setText(adress.getProvince());
-        holder.decTV.setText(adress.getDescription());
+        Address address = AddressList.get(position);
+        holder.cityStreetTV.setText(address.getCity() + " " + address.getStreet());
+        holder.provinceTV.setText(address.getProvince());
+        holder.decTV.setText(address.getDescription());
         holder.addressLL.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onAddressItemClickListener.onAddressClick(holder.getAdapterPosition(), adressList.get(holder.getAdapterPosition()));
+                onAddressItemClickListener.onAddressClick(holder.getAdapterPosition(), AddressList.get(holder.getAdapterPosition()));
             }
         });
     }
 
     @Override
-    public int getItemCount() {
-        return adressList.size();
+    public int getItemCount() { return AddressList.size();
     }
 
     public class AddressViewHolder extends RecyclerView.ViewHolder {
@@ -72,7 +70,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.AddressV
     }
 
     public interface OnAddressItemClickListener {
-        public void onAddressClick(int position, Adress adress);
+        public void onAddressClick(int position, Address address);
 
     }
 }
