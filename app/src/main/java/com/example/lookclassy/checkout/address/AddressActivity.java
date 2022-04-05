@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,6 +25,7 @@ import retrofit2.Response;
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
     public static String ADDRESS_SELECTED_KEY = "DFa";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

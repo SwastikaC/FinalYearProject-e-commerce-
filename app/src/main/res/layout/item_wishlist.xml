@@ -11,7 +11,7 @@
     android:padding="@dimen/normal_spacing">
 
     <ImageView
-        android:id="@+id/wproductIV"
+        android:id="@+id/wishlistproductIV"
         android:layout_width="110dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_google"
@@ -61,7 +61,7 @@
 
             <TextView
 
-                android:id="@+id/wishistdiscountPriceTV"
+                android:id="@+id/wishlistdiscountPriceTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"

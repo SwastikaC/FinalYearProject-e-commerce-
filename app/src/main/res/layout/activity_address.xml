@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".checkout.address.AddressActivity">
 
+
+    <TextView
+        android:id="@+id/AddressTV"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:padding="@dimen/small_spacing"
+        android:background="@drawable/rectange_box"
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/normal_spacing"
+        android:layout_height="wrap_content"
+        android:text="Add Address" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_margin="@dimen/normal_spacing"
@@ -13,4 +26,34 @@
         android:layout_height="match_parent"
         android:id="@+id/addressRV"
         />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".checkout.address.AddressActivity">-->
+
+<!--    <TextView-->
+<!--        android:gravity="center"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:textSize="18sp"-->
+<!--        android:padding="@dimen/small_spacing"-->
+<!--        android:background="@drawable/rectange_box"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_margin="@dimen/normal_spacing"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Add Address" />-->
+
+

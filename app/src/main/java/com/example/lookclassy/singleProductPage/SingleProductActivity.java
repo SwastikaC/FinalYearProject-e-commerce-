@@ -1,4 +1,5 @@
 package com.example.lookclassy.singleProductPage;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -30,16 +31,17 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 public class SingleProductActivity extends AppCompatActivity {
     public static String DATA_KEY = "ds";
     public static String SINGLE_DATA_KEY = "sds";
-    public static String key;
     Product product;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV;
+    ImageView backIV, plusIV, minusIV,  addToWishlist;
     TextView name, price, desc, oldPrice, quantityTV;
     LinearLayout addToCartLL;
+
     int quantity = 1;
     boolean isAdding = false;
 
@@ -49,23 +51,29 @@ public class SingleProductActivity extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         getWindow().setStatusBarColor(Color.WHITE);
         setContentView(R.layout.activity_single_product);
-        backIV = findViewById(R.id.backIV);
+
         imageSlider = findViewById(R.id.imageSlider);
+
+        backIV = findViewById(R.id.backIV);
         name = findViewById(R.id.productNameTV);
         price = findViewById(R.id.productPriceTV);
         quantityTV = findViewById(R.id.quantityTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
+        addToWishlist = findViewById(R.id.addToWishlist);
         addingCartPR = findViewById(R.id.addingCartPR);
         desc = findViewById(R.id.decTV);
         plusIV = findViewById(R.id.plusIV);
         minusIV = findViewById(R.id.minusIV);
-        setOnclickListners();
+
+
         if (getIntent().getSerializableExtra(DATA_KEY) != null) {
             product = (Product) getIntent().getSerializableExtra(DATA_KEY);
             setProduct(product);
-        }
-        System.out.println(product.getId());
+        } else if (getIntent().getSerializableExtra(SINGLE_DATA_KEY) != null)
+            getProductOnline(getIntent().getIntExtra(SINGLE_DATA_KEY, 1));
+
+        setOnclickListners();
     }
 
     private void getProductOnline(int intExtra) {
@@ -156,8 +164,10 @@ public class SingleProductActivity extends AppCompatActivity {
             if (!isAdding) {
                 isAdding = true;
                 addingToggle(true);
-               String apiKey = SharedPrefUtils.getString(this, getString(R.string.api_key));
-               //Toast.makeText(SingleProductActivity.this, apiKey, Toast.LENGTH_LONG).show();
+                String apiKey = SharedPrefUtils.getString(this, getString(R.string.api_key));
+                //Toast.makeText(SingleProductActivity.this, apiKey, Toast.LENGTH_LONG).show();
+//                System.out.println(product.getId());
+//               Toast.makeText(SingleProductActivity.this, , Toast.LENGTH_LONG).show();
                 Call<AllProductResponse> cartCall = ApiClient.getClient().addToCart(apiKey, product.getId(), quantity);
                 cartCall.enqueue(new Callback<AllProductResponse>() {
                     @Override
@@ -177,12 +187,38 @@ public class SingleProductActivity extends AppCompatActivity {
                 });
 
 
-            }
-            else {
+            } else {
                 Toast.makeText(getApplicationContext(), "Added Already!!", Toast.LENGTH_SHORT).show();
             }
 
         });
+
+        //adding item to wishlist
+        addToWishlist.setOnClickListener(v ->{
+            if (!isAdding){
+                isAdding = true;
+                String apikey = SharedPrefUtils.getString(this,getString(R.string.api_key));
+                Call<AllProductResponse> wishlistCall = ApiClient.getClient().addtowishlist(apikey,product.getId());
+                wishlistCall.enqueue(new Callback<AllProductResponse>() {
+                    @Override
+                    public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
+                        if (response.isSuccessful()){
+                            if (!response.body().getError()){
+                                Toast.makeText(SingleProductActivity.this, "Added to Wishlist", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        isAdding = false;
+                    }
+
+                    @Override
+                    public void onFailure(Call<AllProductResponse> call, Throwable t) {
+                        isAdding = false;
+
+                    }
+                });
+            }
+        });
+
 
     }
 

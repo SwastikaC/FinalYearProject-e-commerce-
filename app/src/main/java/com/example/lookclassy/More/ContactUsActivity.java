@@ -22,6 +22,8 @@ public class ContactUsActivity extends AppCompatActivity {
     ImageView contactUsback;
     private static final int REQUEST_CALL = 1;
     private TextView phnnumber;
+    private TextView emailTV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +32,22 @@ public class ContactUsActivity extends AppCompatActivity {
         contactUsback= findViewById(R.id.contactUsback);
         phnnumber = findViewById(R.id.phnnumber);
         phnnumber.setPaintFlags(phnnumber.getPaintFlags() |   Paint.UNDERLINE_TEXT_FLAG);
+        emailTV = findViewById(R.id.emailTV);
+        emailOnClickListener();
         contactbackOnClick();
         setOnClickListeners();
 
+    }
+
+    private void emailOnClickListener() {
+        emailTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) { sendEmail();}
+        });
+    }
+
+    private void sendEmail() {
+        startActivity(new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:lookclassy@gmail.com")));
     }
 
     private void contactbackOnClick() {contactUsback.setOnClickListener(v -> finish());

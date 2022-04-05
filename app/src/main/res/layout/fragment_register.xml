@@ -12,7 +12,7 @@
         android:layout_marginTop="45dp"
         android:textColor="#0C0C0C"
         android:layout_gravity="center"
-        android:textSize="28sp"/>
+        android:textSize="20sp"/>
 
 
 
@@ -21,6 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:background="@drawable/box_shape"
         android:paddingLeft="10dp"
         android:drawableLeft="@drawable/ic_at"
@@ -33,6 +35,8 @@
         android:textSize="16dp" />
     <EditText
         android:id="@+id/nameET"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
@@ -54,6 +58,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/box_shape"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:paddingLeft="10dp"
         android:textColor="#455A64"
         android:drawableLeft="@drawable/ic_padlock"
@@ -74,6 +80,8 @@
         android:background="@drawable/box_shape"
         android:paddingLeft="10dp"
         android:textColor="#455A64"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:drawableLeft="@drawable/ic_padlock"
         android:drawablePadding="10dp"
         android:fontFamily="@font/poppins_regular"
@@ -107,6 +115,8 @@
         android:id="@+id/registerLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:layout_marginTop="20dp"
         android:background="@drawable/rectange_box"
         android:onClick="onLoginClicked"

@@ -14,7 +14,7 @@
     android:layout_marginTop="45dp"
     android:textColor="#0C0C0C"
     android:layout_gravity="center"
-    android:textSize="30sp" />
+    android:textSize="20sp" />
 
 
 <EditText
@@ -22,7 +22,9 @@
     android:layout_width="match_parent"
     android:layout_height="55dp"
     android:layout_marginTop="20dp"
+    android:layout_marginStart="@dimen/normal_spacing"
     android:background="@drawable/box_shape"
+    android:layout_marginEnd="@dimen/normal_spacing"
     android:paddingLeft="10dp"
     android:drawableLeft="@drawable/ic_at"
     android:drawablePadding="16dp"
@@ -38,6 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
         android:background="@drawable/box_shape"
         android:drawableLeft="@drawable/ic_padlock"
         android:paddingLeft="10dp"
@@ -63,6 +67,8 @@
     android:layout_width="match_parent"
     android:layout_height="55dp"
     android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/normal_spacing"
+        android:layout_marginEnd="@dimen/normal_spacing"
     android:background="@drawable/rectange_box"
     android:onClick="onLoginClicked"
     android:orientation="horizontal"

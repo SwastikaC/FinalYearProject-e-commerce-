@@ -83,6 +83,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_spacing"
         android:layout_marginBottom="@dimen/normal_spacing"
         android:layout_marginStart="@dimen/normal_spacing"
         android:layout_marginEnd="@dimen/normal_spacing"
@@ -92,11 +93,44 @@
         android:textSize="24sp"
         android:textStyle="bold"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:text="We're here to help you"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    app:cardBackgroundColor="@color/grey"
+    android:layout_marginStart="@dimen/normal_spacing"
+    android:layout_marginEnd="@dimen/normal_spacing"
+    android:layout_marginTop="@dimen/normal_spacing"
+    android:layout_height="350dp"
     app:cardCornerRadius="10dp"
     android:elevation="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:layout_marginTop="@dimen/normal_spacing"
+
+        android:layout_marginBottom="@dimen/normal_spacing"
+        android:layout_marginStart="@dimen/normal_spacing"
+        android:layout_marginEnd="@dimen/normal_spacing"
+        android:text="Feel free to reach out to us at"
+        android:textColor="@color/priceGray"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,19 +138,20 @@
         android:layout_marginEnd="@dimen/normal_spacing"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/normal_spacing"
-            android:layout_marginTop="40dp"
-            app:cardCornerRadius="15dp"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            app:cardElevation="@dimen/margin_five">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_spacing"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            app:cardCornerRadius="15dp"-->
+<!--            android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--            app:cardElevation="@dimen/margin_five">-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#F1F1F1">
+                android:gravity="center"
+                android:layout_marginTop="50dp">
 
                 <ImageView
                     android:id="@+id/contactno"
@@ -125,7 +160,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/normal_spacing"
-                    android:layout_marginTop="@dimen/margin_ten"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/normal_spacing"
                     android:layout_marginBottom="@dimen/margin_ten"
                     android:src="@drawable/ic_phone" />
@@ -146,19 +181,20 @@
 
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_marginStart="@dimen/normal_spacing"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            app:cardElevation="@dimen/margin_five">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardCornerRadius="15dp"-->
+<!--            android:layout_marginStart="@dimen/normal_spacing"-->
+<!--            android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--            app:cardElevation="@dimen/margin_five">-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:background="#F1F1F1">
 
                 <ImageView
@@ -168,7 +204,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/normal_spacing"
-                    android:layout_marginTop="@dimen/margin_ten"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/normal_spacing"
                     android:layout_marginBottom="@dimen/margin_ten"
                     android:src="@drawable/ic_email" />
@@ -187,31 +223,32 @@
                     android:textSize="20sp" />
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_marginStart="@dimen/normal_spacing"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            app:cardElevation="@dimen/margin_five">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:cardCornerRadius="15dp"-->
+<!--            android:layout_marginStart="@dimen/normal_spacing"-->
+<!--            android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--            app:cardElevation="@dimen/margin_five">-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:background="#F1F1F1">
 
                 <ImageView
                     android:id="@+id/location"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
                     android:layout_alignParentLeft="true"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/normal_spacing"
-                    android:layout_marginTop="@dimen/margin_ten"
-                    android:layout_marginBottom="@dimen/margin_ten"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/normal_spacing"
+                    android:layout_marginBottom="@dimen/margin_ten"
                     android:src="@drawable/ic_baseline_location_on_24"
                     app:tint="@color/primary" />
 
@@ -228,19 +265,20 @@
                     android:textSize="20sp" />
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/normal_spacing"
-            app:cardCornerRadius="15dp"
-            android:layout_marginBottom="@dimen/normal_spacing"
-            app:cardElevation="@dimen/margin_five">
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/normal_spacing"-->
+<!--            app:cardCornerRadius="15dp"-->
+<!--            android:layout_marginBottom="@dimen/normal_spacing"-->
+<!--            app:cardElevation="@dimen/margin_five">-->
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:background="#F1F1F1">
 
                 <ImageView
@@ -250,7 +288,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/normal_spacing"
-                    android:layout_marginTop="@dimen/margin_ten"
+                    android:layout_marginTop="15dp"
                     android:layout_marginEnd="@dimen/normal_spacing"
                     android:layout_marginBottom="@dimen/margin_ten"
                     android:src="@drawable/ic_time" />
@@ -268,7 +306,7 @@
                     android:textSize="20sp" />
 
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+<!--        </androidx.cardview.widget.CardView>-->
 
 
 
@@ -283,6 +321,6 @@
     <!--        android:textColor="@color/black"-->
     <!--        android:textSize="24sp"-->
     <!--        android:textStyle="bold"-->
-    <!--        android:padding="@dimen/normaLspacing"-->
+    <!--        android:padding="@dime   n/normaLspacing"-->
 
 </LinearLayout>

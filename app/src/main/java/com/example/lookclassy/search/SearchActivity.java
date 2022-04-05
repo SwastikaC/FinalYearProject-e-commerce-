@@ -75,6 +75,8 @@ public class SearchActivity extends AppCompatActivity {
         product_RV.setLayoutManager(new GridLayoutManager(SearchActivity.this, 1));
         searchAdapter = new SearchAdapter(productList, this);
         product_RV.setAdapter(searchAdapter);
+
+
     }
 
 

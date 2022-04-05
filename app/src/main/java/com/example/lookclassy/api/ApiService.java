@@ -104,5 +104,14 @@ public interface ApiService {
     @GET("/api/v1/get-all-products")
     Call<SingleProductResponse> getProductById(@Query("id") int c_id);
 
+    @FormUrlEncoded
+    @POST("/api/v1/wishlist")
+    Call<AllProductResponse> addtowishlist(@Header("api_key") String apikey, @Field("p_id") int p);
+
+    @GET("/api/v1/wishlist")
+    Call<AllProductResponse> getMyWishlist(@Header("api_key") String apikey);
+
+    @DELETE("/api/v1/wishlist")
+    Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("w_id") int wishlistID);
 
 }
