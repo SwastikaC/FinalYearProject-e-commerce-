@@ -10,17 +10,28 @@ public class OrderHistory {
     @SerializedName("id")
     @Expose
     private Integer id;
+
     @SerializedName("order_date_time")
     @Expose
     private String orderDateTime;
+
     @SerializedName("payment_type")
     @Expose
     private Integer paymentType;
+
     @SerializedName("payment_refrence")
     @Expose
     private String paymentRefrence;
+
+    @SerializedName("status")
+    @Expose
+    private Integer Status;
+
+
     @SerializedName("bag")
     @Expose
+
+
     private List<Bag> bag = null;
 
     public Integer getId() {
@@ -46,6 +57,16 @@ public class OrderHistory {
     public void setPaymentType(Integer paymentType) {
         this.paymentType = paymentType;
     }
+
+
+    public Integer getStatus() {
+        return Status;
+    }
+
+    public void setStatus(Integer Status) {
+        this.Status = Status;
+    }
+
 
     public String getPaymentRefrence() {
         return paymentRefrence;

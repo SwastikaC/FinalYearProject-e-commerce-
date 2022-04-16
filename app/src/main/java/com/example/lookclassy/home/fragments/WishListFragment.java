@@ -39,7 +39,7 @@ public class WishListFragment extends Fragment {
     RecyclerView allwishlistProductRV;
     List<Product> products;
     SwipeRefreshLayout swipeRefresh;
-    ImageView emptyWishlistIV;
+    ImageView emptyWishlistIV, addedToCart;
     AllProductResponse allProductResponse;
 
     @Override
@@ -55,19 +55,12 @@ public class WishListFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         allwishlistProductRV = view.findViewById(R.id.allwishlistProductRV);
         swipeRefresh = view.findViewById(R.id.swipeRefresh);
+        addedToCart = view.findViewById(R.id.addedToCart);
         emptyWishlistIV = view.findViewById(R.id.emptyWishlistIV);
-        swipeRefresh.setOnClickListener(new View.OnClickListener() {
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void onClick(View view) {
-                swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        swipeRefresh.setRefreshing(true);
-                        getWishlistItems();
-                    }
-
-
-                });
+            public void onRefresh() {
+                swipeRefresh.setRefreshing(true);
                 getWishlistItems();
             }
         });
@@ -114,7 +107,7 @@ public class WishListFragment extends Fragment {
 
     private void loadWishList() {
         allwishlistProductRV.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         allwishlistProductRV.setLayoutManager(layoutManager);
         WishListAdapter wishlistAdapter = new WishListAdapter(products, getContext());
         wishlistAdapter.setWishCartItemClick(new WishListAdapter.WishlistCartItemClick() {
@@ -143,9 +136,6 @@ public class WishListFragment extends Fragment {
         });
         allwishlistProductRV.setAdapter(wishlistAdapter);
     }
-
-
-
 
 
 //    // delete wishlist item

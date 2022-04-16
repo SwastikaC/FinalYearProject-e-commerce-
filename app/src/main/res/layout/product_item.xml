@@ -14,9 +14,9 @@
         android:layout_height="200dp"
         android:src="@drawable/image01"
         android:layout_marginBottom="10dp" />
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content">-->
     <TextView
         android:id="@+id/productNameTV"
         android:layout_width="wrap_content"
@@ -26,16 +26,21 @@
         android:textColor="@color/black"
         android:textSize="16sp" />
 
-        <ImageView
-            android:id="@+id/addToWishlist"
+<!--        <ImageView-->
+<!--            android:id="@+id/addToWishlist"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginLeft="190dp"-->
+<!--            android:src="@drawable/ic_favorite">-->
+
+<!--        </ImageView>-->
+
+<!--    </RelativeLayout>-->
+
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="190dp"
-            android:src="@drawable/ic_favorite">
+            android:layout_height="wrap_content">
 
-        </ImageView>
-
-    </RelativeLayout>
 
     <TextView
         android:id="@+id/discountPriceTV"
@@ -46,7 +51,16 @@
         android:textColor="@color/primary"
         android:textSize="18sp" />
 
+            <ImageView
+                android:id="@+id/addToWishlist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="190dp"
+                android:src="@drawable/ic_favorite">
 
+            </ImageView>
+
+        </RelativeLayout>
 
 
     <LinearLayout

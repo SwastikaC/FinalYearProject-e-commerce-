@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/AddressTV"
+        android:id="@+id/AddAddressTV"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -17,7 +17,7 @@
         android:background="@drawable/rectange_box"
         android:layout_width="match_parent"
         android:layout_margin="@dimen/normal_spacing"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="Add Address" />
 
     <androidx.recyclerview.widget.RecyclerView

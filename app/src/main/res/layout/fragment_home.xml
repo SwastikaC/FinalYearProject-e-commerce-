@@ -177,6 +177,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/normal_spacing"
                     android:text="Categories"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -186,9 +187,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/poppins_extra_bold"
                     android:text="View All >> "
                     android:textColor="@color/primary"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -201,15 +204,31 @@
 
                 />
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/grey_divider"
-                android:padding="10dp"
-                android:text="Just For You"
+                android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_spacing"
+                android:text="For You"
                 android:textColor="@color/black"
                 android:textSize="18sp" />
+            </LinearLayout>
+
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/grey_divider"-->
+<!--                android:padding="10dp"-->
+<!--                android:text="Just For You"-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="18sp" />-->
 
             <RelativeLayout
                 android:layout_width="match_parent"

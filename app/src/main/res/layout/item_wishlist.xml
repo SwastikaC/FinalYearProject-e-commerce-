@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/wishlistLL"
     android:layout_width="match_parent"
-    android:layout_height="135dp"
+    android:layout_height="150dp"
     android:layout_marginBottom="@dimen/normal_spacing"
     android:background="@drawable/rectange_box"
     android:backgroundTint="#F1F6FD"
@@ -13,14 +13,14 @@
     <ImageView
         android:id="@+id/wishlistproductIV"
         android:layout_width="110dp"
-        android:layout_height="100dp"
+        android:layout_height="129dp"
         android:src="@drawable/ic_google"
 
         />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:orientation="vertical"
         android:paddingStart="@dimen/normal_spacing">
 
@@ -34,6 +34,7 @@
                 android:id="@+id/wishlistproductNameTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="15dp"
                 android:layout_weight="1"
                 android:text="Purple Hoodie"
                 android:textColor="@color/black"
@@ -99,24 +100,25 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/wishlisttrashIV"
-                android:layout_width="25dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_trashs" />
-
-            <ImageView
                 android:id="@+id/addedToCart"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="180dp"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
                 android:background="@drawable/rectange_box"
                 android:src="@drawable/ic_shoppingcart"
                 app:tint="@color/white" />
+
+            <ImageView
+                android:id="@+id/wishlisttrashIV"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="180dp"
+
+                android:src="@drawable/ic_trashs" />
 
 
     </RelativeLayout>

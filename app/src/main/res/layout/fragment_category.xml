@@ -38,37 +38,20 @@
 <!--                        android:elevation="20dp"-->
 <!--                        android:src="@drawable/ic_back" />-->
 
-                    <LinearLayout
 
-                        android:paddingEnd="25dp"
-                        android:paddingStart="30dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:background="@drawable/search_box"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="40dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:text="Shop by Category"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/ic_search"/>
-
-                        <TextView
-
-                            android:id="@+id/searchIt"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:text="I am looking for .."
-
-                            />
+                        />
 
 
-
-                    </LinearLayout>
                 </androidx.appcompat.widget.Toolbar>
 
             </com.google.android.material.appbar.AppBarLayout>
@@ -79,17 +62,7 @@
 
 <!--    </com.google.android.material.appbar.AppBarLayout>-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textStyle="bold"
-                    android:layout_marginTop="5dp"
-                    android:text="Shop by Category"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
 
-                    />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"

@@ -10,8 +10,8 @@
         android:id="@+id/catNameTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="8dp"
+        android:padding="10dp"
         android:layout_marginLeft="10dp"
-        android:text="Mobile Accessories" />
+        android:text="Dress" />
 
 </LinearLayout>

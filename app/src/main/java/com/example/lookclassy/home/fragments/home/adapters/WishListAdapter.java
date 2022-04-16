@@ -22,6 +22,7 @@ import java.util.List;
 public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.WishListViewHolder> {
     List<Product> productDataList;
     LayoutInflater inflater;
+//    Boolean isWishlist = false;
     Context context;
     //  WishLisItemClick wishlistItemClick;
     WishlistCartItemClick  wishlistCartItemClick ;
@@ -31,6 +32,7 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.WishLi
         this.productDataList = productDataList;
         this.inflater = LayoutInflater.from(context);
         this.context = context;
+//        this.isWishlist = isWishlist;
     }
 
     public void setWishCartItemClick(WishlistCartItemClick wishlistCartItemClick) {
@@ -72,6 +74,8 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.WishLi
             }
         });
 
+
+
     }
 
     public static void setMargins(View v, int l, int t, int r, int b) {
@@ -90,9 +94,9 @@ public class WishListAdapter extends RecyclerView.Adapter<WishListAdapter.WishLi
 
     public class WishListViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView wishlistproductIV, wishlisttrashIV;
+        ImageView wishlistproductIV, wishlisttrashIV, addedToCart;
         TextView wishlistproductNameTV, wishlistoldPriceTV, wishlistdiscountPriceTV;
-        LinearLayout addedToCart,wishlistLL;
+        LinearLayout wishlistLL;
 
         public WishListViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -64,7 +64,7 @@
             android:layout_marginTop="70dp"
             android:text="TERMS AND CONDTION"
             android:textSize="16dp"
-            android:textColor="@color/black"
+            android:textColor="@color/primary"
             android:fontFamily="@font/poppins_regular"
             android:textStyle="bold"/>
         <TextView
@@ -75,7 +75,7 @@
             android:text="1. Introduction"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -114,7 +114,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             android:text="2. Communictaion"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -140,7 +140,7 @@ If you do not agree with (or cannot comply with) Agreements, then you may not us
             android:text="2. Purchase"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -175,7 +175,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             android:text="3. Refunds"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -201,7 +201,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             android:text="4. Content"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -227,7 +227,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             android:text="5. Prohibited Users"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -266,7 +266,7 @@ We reserve the right to refuse or cancel your order if fraud or an unauthorized 
             android:text="7. Termination"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -297,7 +297,7 @@ All provisions of Terms which by their nature should survive termination shall s
             android:text="8. Governing Law"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView
@@ -325,7 +325,7 @@ Our failure to enforce any right or provision of these Terms will not be conside
             android:text="9. Acknowledgement"
             android:textSize="14dp"
             android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/black"
+            android:textColor="@color/priceGray"
             android:textStyle="bold"/>
 
         <TextView

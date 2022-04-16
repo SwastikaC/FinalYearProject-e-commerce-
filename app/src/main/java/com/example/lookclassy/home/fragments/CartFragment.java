@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class CartFragment extends Fragment {
     LinearLayout addToCartLL;
     AllProductResponse allProductResponse;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,6 +55,7 @@ public class CartFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         allProductRV = view.findViewById(R.id.allProductRV);
         totalPriceTv = view.findViewById(R.id.totalPriceTv);
         addToCartLL = view.findViewById(R.id.addToCartLL);

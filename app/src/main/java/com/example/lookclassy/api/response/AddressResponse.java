@@ -6,8 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 import java.util.List;
 
-public class AddressResponse implements Serializable {
-
+public class AddressResponse{
 
         @SerializedName("addresses")
         @Expose
@@ -44,4 +43,3 @@ public class AddressResponse implements Serializable {
         }
 
     }
-

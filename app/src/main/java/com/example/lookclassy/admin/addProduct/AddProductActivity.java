@@ -121,10 +121,10 @@ public class AddProductActivity extends AppCompatActivity {
         startActivity(addCategory);
     }
 
-    public void pDateClick(View view) {
-        DialogFragment newFragment = new DatePickerFragment();
-        newFragment.show(getSupportFragmentManager(), "datePicker");
-    }
+//    public void pDateClick(View view) {
+//        DialogFragment newFragment = new DatePickerFragment();
+//        newFragment.show(getSupportFragmentManager(), "datePicker");
+//    }
 
     private File createImageFile() throws IOException {
         // Create an image file name
@@ -221,8 +221,8 @@ public class AddProductActivity extends AppCompatActivity {
         RequestBody rPrice = RequestBody.create(MediaType.parse("text/plain"), price);
         RequestBody rDisP = RequestBody.create(MediaType.parse("text/plain"), discountPrice);
         RequestBody rQuantity = RequestBody.create(MediaType.parse("text/plain"), quantity);
-        RequestBody rPD = RequestBody.create(MediaType.parse("text/plain"), pDate);
-        RequestBody rED = RequestBody.create(MediaType.parse("text/plain"), eDate);
+//        RequestBody rPD = RequestBody.create(MediaType.parse("text/plain"), pDate);
+//        RequestBody rED = RequestBody.create(MediaType.parse("text/plain"), eDate);
         RequestBody rDesc = RequestBody.create(MediaType.parse("text/plain"), desc);
         MultipartBody.Part[] files = new MultipartBody.Part[photoPath.size()];
         for (int i = 0; i < photoPath.size(); i++) {

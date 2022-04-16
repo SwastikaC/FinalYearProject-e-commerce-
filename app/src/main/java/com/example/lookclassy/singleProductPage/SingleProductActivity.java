@@ -208,6 +208,7 @@ public class SingleProductActivity extends AppCompatActivity {
                             }
                         }
                         isAdding = false;
+//                        Toast.makeText(SingleProductActivity.this, "Removed from  Wishlist", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override

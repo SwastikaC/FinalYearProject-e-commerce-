@@ -253,7 +253,6 @@ public class AdminActivity extends AppCompatActivity {
                     Toast.makeText(AdminActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                 } else {
                     progressDialog.dismiss();
-
                     Toast.makeText(AdminActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -261,7 +260,7 @@ public class AdminActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<RegisterResponse> call, Throwable t) {
                 dialog.dismiss();
-                Toast.makeText(AdminActivity.this, "Upload Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

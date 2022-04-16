@@ -166,56 +166,12 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-
-
         <RelativeLayout
+            android:id="@+id/codIV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/box_shape_selected">
-
-
-            <ImageView
-
-                android:id="@+id/khaltiPayment"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentLeft="true"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="@dimen/normal_spacing"
-                android:layout_marginTop="@dimen/margin_ten"
-                android:layout_marginEnd="@dimen/normal_spacing"
-                android:layout_marginBottom="@dimen/margin_ten"
-                android:src="@drawable/khalti" />
-
-            <TextView
-                android:id="@+id/pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_centerInParent="true"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="@dimen/normal_spacing"
-                android:layout_marginBottom="@dimen/normal_spacing"
-                android:layout_toRightOf="@id/khaltiPayment"
-                android:gravity="center_vertical"
-                android:text="Khalti App"
-                android:textColor="@color/black"
-                android:textColorHint="@color/priceGray"
-                android:textSize="16sp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:paddingStart="350dp"
-                android:src="@drawable/ic_profile_arrow" />
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginStart="@dimen/normal_spacing"
+            android:layout_marginEnd="@dimen/normal_spacing"
             android:background="@drawable/box_shape">
 
 
@@ -257,6 +213,55 @@
 
 
         </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/khaltiIV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_spacing"
+            android:layout_marginStart="@dimen/normal_spacing"
+            android:layout_marginEnd="@dimen/normal_spacing"
+            android:background="@drawable/box_shape_selected">
+
+
+            <ImageView
+
+                android:id="@+id/khaltiPayment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/normal_spacing"
+                android:layout_marginTop="@dimen/margin_ten"
+                android:layout_marginEnd="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/margin_ten"
+                android:src="@drawable/khalti" />
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/normal_spacing"
+                android:layout_toRightOf="@id/khaltiPayment"
+                android:gravity="center_vertical"
+                android:text="Khalti App"
+                android:textColor="@color/black"
+                android:textColorHint="@color/priceGray"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:paddingStart="350dp"
+                android:src="@drawable/ic_profile_arrow" />
+        </RelativeLayout>
+
+
 
 
         <!--            <ImageView-->
@@ -341,27 +346,27 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/small_spacing"
-            android:orientation="horizontal"
-            android:paddingStart="@dimen/normal_spacing"
-            android:paddingEnd="@dimen/normal_spacing">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginBottom="@dimen/small_spacing"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:paddingStart="@dimen/normal_spacing"-->
+<!--            android:paddingEnd="@dimen/normal_spacing">-->
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Discount:" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Discount:" />-->
 
-                        <TextView
-                            android:id="@+id/discountTV"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="end"
-                            android:text="- Rs. 1000"
-                            android:textColor="@color/black" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/discountTV"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="end"-->
+<!--                android:text="- Rs. 1000"-->
+<!--                android:textColor="@color/black" />-->
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"

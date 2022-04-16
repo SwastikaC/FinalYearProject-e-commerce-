@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -59,6 +60,7 @@ public class HomeFragment extends Fragment {
     LinearLayout searchLL;
     BottomNavigationView bottomNavigationView;
     TextView nameTV;
+    ImageView addToWishlist;
     CircleImageView userProfileIV;
 
 
@@ -83,6 +85,7 @@ public class HomeFragment extends Fragment {
         loadingProgress = view.findViewById(R.id.loadingProgress);
         imageSlider = view.findViewById(R.id.imageSlider);
         viewAllTV = view.findViewById(R.id.viewAllTV);
+        addToWishlist = view.findViewById(R.id.addToWishlist);
         searchLL = view.findViewById(R.id.searchLL);
         nameTV = view.findViewById(R.id.nameTV);
         userProfileIV = view.findViewById(R.id.userProfileIV);
@@ -169,7 +172,7 @@ public class HomeFragment extends Fragment {
         imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         imageSlider.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
         imageSlider.setIndicatorUnselectedColor(Color.GRAY);
-        imageSlider.setScrollTimeInSec(5); //set scroll delay in seconds :
+        imageSlider.setScrollTimeInSec(2); //set scroll delay in seconds :
         imageSlider.startAutoCycle();
 
     }

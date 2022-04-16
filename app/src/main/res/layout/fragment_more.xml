@@ -80,26 +80,26 @@
             android:drawableRight="@drawable/ic_profile_arrow"
             android:fontFamily="@font/poppins_regular"
             android:padding="@dimen/normal_spacing"
-            android:text="My Order"
+            android:text="My Order History"
             android:textColor="#455A64"
             android:textSize="16sp"
             android:textStyle="bold" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/wishlistTV"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginLeft="@dimen/normal_spacing"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginRight="@dimen/normal_spacing"-->
-<!--            android:background="@drawable/profilebox_shape"-->
-<!--            android:drawableRight="@drawable/ic_profile_arrow"-->
-<!--            android:fontFamily="@font/poppins_regular"-->
-<!--            android:padding="@dimen/normal_spacing"-->
-<!--            android:text="Wishlist"-->
-<!--            android:textColor="#455A64"-->
-<!--            android:textSize="16sp"-->
-<!--            android:textStyle="bold" />-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/wishlistTV"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginLeft="@dimen/normal_spacing"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginRight="@dimen/normal_spacing"-->
+        <!--            android:background="@drawable/profilebox_shape"-->
+        <!--            android:drawableRight="@drawable/ic_profile_arrow"-->
+        <!--            android:fontFamily="@font/poppins_regular"-->
+        <!--            android:padding="@dimen/normal_spacing"-->
+        <!--            android:text="Wishlist"-->
+        <!--            android:textColor="#455A64"-->
+        <!--            android:textSize="16sp"-->
+        <!--            android:textStyle="bold" />-->
 
         <TextView
             android:id="@+id/policiesTV"
@@ -133,23 +133,8 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-       <TextView
-        android:id="@+id/aboutusTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/normal_spacing"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="@dimen/normal_spacing"
-        android:background="@drawable/profilebox_shape"
-        android:drawableRight="@drawable/ic_profile_arrow"
-        android:fontFamily="@font/poppins_regular"
-        android:padding="@dimen/normal_spacing"
-        android:text="About"
-        android:textColor="#455A64"
-        android:textSize="16sp"
-        android:textStyle="bold" />
         <TextView
-            android:id="@+id/helpTV"
+            android:id="@+id/aboutusTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/normal_spacing"
@@ -159,12 +144,10 @@
             android:drawableRight="@drawable/ic_profile_arrow"
             android:fontFamily="@font/poppins_regular"
             android:padding="@dimen/normal_spacing"
-            android:text="Help"
+            android:text="About"
             android:textColor="#455A64"
             android:textSize="16sp"
             android:textStyle="bold" />
-
-
 
 
         <TextView
@@ -183,22 +166,25 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/adminAreaTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_spacing"
+            android:background="@drawable/profilebox_shape"
+            android:drawableRight="@drawable/ic_baseline_admin_panel_settings_24"
+            android:drawableTint="@color/primary"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="@dimen/normal_spacing"
+            android:text="Admin Area"
+            android:textColor="#455A64"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/adminAreaTV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normal_spacing"
-        android:background="@drawable/box_shape_selected"
-        android:backgroundTint="#F1EEEE"
-        android:drawableRight="@drawable/ic_baseline_admin_panel_settings_24"
-        android:drawableTint="@color/primary"
-        android:padding="@dimen/normal_spacing"
-        android:text="Admin Area"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:visibility="gone" />
 
 </RelativeLayout>
 

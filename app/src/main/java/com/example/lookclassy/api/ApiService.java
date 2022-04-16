@@ -38,12 +38,13 @@ public interface ApiService {
     @POST("/api/v1/cart")
     Call<AllProductResponse> addToCart(@Header("api_key") String apikey, @Field("p_id") int p, @Field("quantity") int q);
 
-    @FormUrlEncoded
-    @POST("/api/v1/order")
-    Call<RegisterResponse> order(@Header("api_key") String apikey,
-                                 @Field("p_type") int p_type,
-                                 @Field("address_id") int address_id,
-                                 @Field("payment_refrence") String paymentRefrence);
+//    @FormUrlEncoded
+//    @POST("/api/v1/order")
+//    Call<RegisterResponse> order(@Header("api_key") String apikey,
+//                                 @Field("p_type") int p_type,
+//                                 @Field("address_id") int address_id,
+//                                 @Field("status") int status,
+//                                 @Field("payment_refrence") String paymentRefrence);
 
     @GET("/api/v1/order")
     Call<OrderHistoryResponse> orderHistory(@Header("api_key") String apikey
@@ -80,6 +81,7 @@ public interface ApiService {
 
     @GET("/api/v1/wishlist")
     Call<AllProductResponse> wishlist(@Header("api_key") String apikey);
+
     @Multipart
     @POST("/api/v1/upload-product")
     Call<RegisterResponse> uploadProduct(
@@ -101,6 +103,7 @@ public interface ApiService {
             @Part("name") RequestBody name
 
     );
+
     @GET("/api/v1/get-all-products")
     Call<SingleProductResponse> getProductById(@Query("id") int c_id);
 
@@ -114,4 +117,20 @@ public interface ApiService {
     @DELETE("/api/v1/wishlist")
     Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("w_id") int wishlistID);
 
+    @FormUrlEncoded
+    @POST("/api/v1/address")
+    Call<AddressResponse> address(
+            @Header("api_key") String apikey,
+            @Field("city") String city,
+            @Field("street") String street,
+            @Field("description") String description,
+            @Field("province") String province);
+
+    @FormUrlEncoded
+    @POST("/api/v1/order")
+    Call<RegisterResponse> order(@Header("api_key") String apikey,
+                                 @Field("p_type") int p_type,
+                                 @Field("address_id") int address_id,
+                                 @Field("status") int status,
+                                 @Field("payment_refrence") String paymentRefrence);
 }

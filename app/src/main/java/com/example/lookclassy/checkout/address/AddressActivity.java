@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lookclassy.More.ProfileActivity;
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.ApiClient;
 import com.example.lookclassy.api.response.AddressResponse;
@@ -24,6 +26,7 @@ import retrofit2.Response;
 
 public class AddressActivity extends AppCompatActivity {
     RecyclerView addressRV;
+    TextView AddAddressTV;
     public static String ADDRESS_SELECTED_KEY = "DFa";
 
 
@@ -32,10 +35,24 @@ public class AddressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_address);
         addressRV = findViewById(R.id.addressRV);
+        AddAddressTV = findViewById(R.id.AddAddressTV);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Select Address");
+        addAddressOnClick();
         getAddressOnline();
+    }
+
+    private void addAddressOnClick() {
+        AddAddressTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddressActivity.this, AddAddressActivity.class);
+                startActivity(intent);
+            }
+
+
+        });
     }
 
     private void getAddressOnline() {
@@ -81,4 +98,10 @@ public class AddressActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getAddressOnline();
+    }
+
 }

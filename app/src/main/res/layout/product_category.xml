@@ -12,7 +12,6 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:padding="5dp"
-        android:scaleType="centerCrop"
         android:src="@drawable/cod"
         app:civ_border_color="@color/primary"
         app:civ_circle_background_color="@color/primary" />

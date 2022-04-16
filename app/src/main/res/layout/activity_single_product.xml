@@ -22,8 +22,8 @@
 
                 <com.smarteist.autoimageslider.SliderView
                     android:id="@+id/imageSlider"
-                    android:layout_width="match_parent"
-                    android:layout_height="420dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="500dp"
                     app:sliderAnimationDuration="600"
                     app:sliderAutoCycleDirection="back_and_forth"
                     app:sliderAutoCycleEnabled="true"
@@ -34,9 +34,7 @@
                     app:sliderIndicatorPadding="3dp"
                     app:sliderIndicatorRadius="2dp"
                     app:sliderIndicatorSelectedColor="@color/primary"
-                    app:sliderIndicatorUnselectedColor="#FFF"
-
-                    />
+                    app:sliderIndicatorUnselectedColor="#FFF" />
 
                 <ImageView
                     android:id="@+id/backIV"

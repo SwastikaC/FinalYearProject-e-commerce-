@@ -1,6 +1,7 @@
 package com.example.lookclassy.home.fragments;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,10 +11,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.example.lookclassy.More.AboutUsActivity;
 import com.example.lookclassy.More.ContactUsActivity;
+import com.example.lookclassy.More.OrderHistoryActivity;
 import com.example.lookclassy.More.TermsAndConditionActivity;
 import com.example.lookclassy.R;
 import com.example.lookclassy.admin.AdminActivity;
@@ -25,8 +28,9 @@ public class MoreFragment extends Fragment {
     TextView logOutTV;
     TextView profileTV;
     TextView adminAreaTV;
-    TextView policiesTV;
+    TextView policiesTV, OrderhistoryTV;
     TextView aboutusTV, contactusTV;
+    Window window;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,11 +43,15 @@ public class MoreFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         logOutTV = view.findViewById(R.id.logOutTV);
         profileTV = view.findViewById(R.id.profileTV);
         adminAreaTV = view.findViewById(R.id.adminAreaTV);
         policiesTV = view.findViewById(R.id.policiesTV);
         aboutusTV = view.findViewById(R.id.aboutusTV);
+        OrderhistoryTV = view.findViewById(R.id.OrderhistoryTV);
+
+        orderhistoryOnClick();
         contactusTV = view.findViewById(R.id.contactusTV);
         contactusOnClick();
         checkAdmin();
@@ -51,6 +59,16 @@ public class MoreFragment extends Fragment {
         ProfileOnClick();
         PoliciesOnClick();
 
+    }
+
+    private void orderhistoryOnClick() {
+        OrderhistoryTV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), OrderHistoryActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void contactusOnClick() {
