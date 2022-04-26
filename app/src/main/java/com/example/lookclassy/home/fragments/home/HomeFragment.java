@@ -56,13 +56,13 @@ public class HomeFragment extends Fragment {
     RecyclerView allProductRV, categoryRV;
     ProgressBar loadingProgress;
     SliderView imageSlider;
-    TextView viewAllTV, searchIt;;
+    TextView viewAllTV, searchIt;
+    ;
     LinearLayout searchLL;
     BottomNavigationView bottomNavigationView;
     TextView nameTV;
     ImageView addToWishlist;
     CircleImageView userProfileIV;
-
 
 
     @Override
@@ -102,14 +102,14 @@ public class HomeFragment extends Fragment {
         searchIt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(getActivity(), SearchActivity.class);
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
                 startActivity(intent);
             }
         });
     }
 
     private void getname() {
-        nameTV.setText(SharedPrefUtils.getString(getActivity(),"nk"));
+        nameTV.setText(SharedPrefUtils.getString(getActivity(), "nk"));
     }
 
     private void setClickListeners() {
@@ -154,16 +154,20 @@ public class HomeFragment extends Fragment {
             public void onSliderClick(int position, Slider slider) {
 
                 if (slider.getType() == 1) {
+//                    System.out.println("one: " + slider.getRelatedId());
+//                    Intent cat = new Intent(getContext(), CategoryActivity.class);
+//                    Category category = new Category();
+//                    category.setId(slider.getRelatedId());
+//                    category.setName(slider.getDesc());
+//                    cat.putExtra(CategoryActivity.CATEGORY_DATA_KEY, category);
+//                    getContext().startActivity(cat);
+//
+                } else if (slider.getType() == 2) {
+//                    System.out.println("one: " + slider.getRelatedId());
                     Intent intent = new Intent(getContext(), SingleProductActivity.class);
                     intent.putExtra(SingleProductActivity.SINGLE_DATA_KEY, slider.getRelatedId());
                     getContext().startActivity(intent);
-                } else if (slider.getType() == 2) {
-                    Intent cat = new Intent(getContext(), CategoryActivity.class);
-                    Category category = new Category();
-                    category.setId(slider.getRelatedId());
-                    category.setName(slider.getDesc());
-                    cat.putExtra(CategoryActivity.CATEGORY_DATA_KEY, category);
-                    getContext().startActivity(cat);
+//
                 }
             }
         });
@@ -172,7 +176,7 @@ public class HomeFragment extends Fragment {
         imageSlider.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
         imageSlider.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
         imageSlider.setIndicatorUnselectedColor(Color.GRAY);
-        imageSlider.setScrollTimeInSec(2); //set scroll delay in seconds :
+        imageSlider.setScrollTimeInSec(4); //set scroll delay in seconds :
         imageSlider.startAutoCycle();
 
     }

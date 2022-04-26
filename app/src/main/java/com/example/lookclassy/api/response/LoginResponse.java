@@ -18,8 +18,18 @@ public class LoginResponse {
     @Expose
     private String apiKey;
     @SerializedName("createdAt")
+
     @Expose
     private String createdAt;
+
+    @SerializedName("phonenumber")
+    @Expose
+    private String phonenumber;
+
+    @SerializedName("dateofbirth")
+    @Expose
+    private String dateofbirth;
+
     @SerializedName("is_staff")
     @Expose
     private Boolean isStaff;
@@ -63,6 +73,24 @@ public class LoginResponse {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getDateofbirth() {
+        return dateofbirth;
+    }
+
+    public void setDateofbirth(String dateofbirth) {
+        this.dateofbirth = dateofbirth;
+    }
+
+
 
     public Boolean getIsStaff() {
         return isStaff;

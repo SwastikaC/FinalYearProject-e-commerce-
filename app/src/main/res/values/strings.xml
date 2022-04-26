@@ -25,8 +25,19 @@
     <string name="staff_key" translatable="false">sfk</string>
     <string name="email_key" translatable="false">ek</string>
     <string name="name_key" translatable="false">nk</string>
+    <string name="phonenumber" translatable="false">pn</string>
+    <string name="dateofbirth" translatable="false">dob</string>
     <string name="created_key" translatable="false">ck</string>
     <string name="category">Category</string>
     <string name="categories">Categories</string>
+    <string name="title_activity_order">OrderActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.lookclassy.admin.AdminActivity;
 import com.example.lookclassy.api.ApiClient;
 import com.example.lookclassy.api.response.LoginResponse;
 import com.example.lookclassy.home.MainActivity;
@@ -72,8 +73,15 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.email_id), loginResponse.getEmail());
                                 SharedPrefUtils.setString(getActivity(), getString(R.string.created_key), loginResponse.getCreatedAt());
                                 SharedPrefUtils.setString(getActivity(),  getString(R.string.api_key), loginResponse.getApiKey());
+                                SharedPrefUtils.setString(getActivity(), getString(R.string.phonenumber), loginResponse.getPhonenumber());
+                                SharedPrefUtils.setString(getActivity(), getString(R.string.dateofbirth), loginResponse.getDateofbirth());
                                 SharedPrefUtils.setBoolean(getActivity(),  getString(R.string.staff_key), loginResponse.getIsStaff());
-                                getActivity().startActivity(new Intent(getContext(), MainActivity.class));
+//                                getActivity().startActivity(new Intent(getContext(), MainActivity.class));
+//                                getActivity().finish();
+
+
+
+                                getActivity().startActivity(new Intent(getContext(),loginResponse.getIsStaff() ? AdminActivity.class :MainActivity.class));
                                 getActivity().finish();
                             }
 

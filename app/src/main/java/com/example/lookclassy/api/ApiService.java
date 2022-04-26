@@ -30,9 +30,7 @@ public interface ApiService {
     @POST("/api/v1/login")
     Call<LoginResponse> login(@Field("email") String email, @Field("password") String password);
 
-    @FormUrlEncoded
-    @POST("/api/v1/register")
-    Call<RegisterResponse> register(@Field("name") String names, @Field("email") String email, @Field("password") String password);
+
 
     @FormUrlEncoded
     @POST("/api/v1/cart")
@@ -115,7 +113,7 @@ public interface ApiService {
     Call<AllProductResponse> getMyWishlist(@Header("api_key") String apikey);
 
     @DELETE("/api/v1/wishlist")
-    Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("w_id") int wishlistID);
+    Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("wishlist_id") int wishlistID);
 
     @FormUrlEncoded
     @POST("/api/v1/address")
@@ -133,4 +131,30 @@ public interface ApiService {
                                  @Field("address_id") int address_id,
                                  @Field("status") int status,
                                  @Field("payment_refrence") String paymentRefrence);
+
+//    Call<RegisterResponse> forgotpassword(String key, String toString);
+
+    @FormUrlEncoded
+    @POST("api/v1/forget-password")
+    Call<RegisterResponse> forgotpassword(@Header("api_key") String apikey, @Field("password") String password);
+
+//    Call<RegisterResponse> updateProfile(String key, String names, String email, String dateofbirth, String contact);
+
+
+    @FormUrlEncoded
+    @POST("/api/v1/updateProfile")
+    Call<RegisterResponse> updateProfile(@Header("api_key") String apikey,
+                                         @Field("name") String names,
+                                         @Field("email") String email,
+                                         @Field("dateofbirth") String dateofbirth,
+                                         @Field("phonenumber") String phonenumber);
+
+//    @FormUrlEncoded
+//    @POST("/api/v1/register")
+//    Call<RegisterResponse> register(String toString, String toString1, String toString2, String toString3, String toString4);
+    @FormUrlEncoded
+    @POST("api/v1/register")
+    Call<RegisterResponse> register(@Field("name") String names, @Field("email") String email, @Field("password") String password,
+                                    @Field("dateofbirth") String dateofbirth, @Field("phonenumber") String phonenumber);
+
 }

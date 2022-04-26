@@ -21,7 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterFragment extends Fragment {
-    EditText emailET, passwordET, confirmPasswordET, nameET;
+    EditText emailET, passwordET, confirmPasswordET, nameET, dobEt, numberET;
     LinearLayout registerLL;
     ProgressBar circularProgress;
 
@@ -38,6 +38,8 @@ public class RegisterFragment extends Fragment {
         nameET = view.findViewById(R.id.nameET);
         passwordET = view.findViewById(R.id.passwordET);
         confirmPasswordET = view.findViewById(R.id.confirmPasswordET);
+        dobEt = view.findViewById(R.id.bodET);
+        numberET = view.findViewById(R.id.numberET);
         circularProgress = view.findViewById(R.id.circularProgress);
         registerLL = view.findViewById(R.id.registerLL);
         registerLL.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +47,7 @@ public class RegisterFragment extends Fragment {
             public void onClick(View v) {
                 if (validate()) {
                     toggleLoading(true);
-                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString());
+                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString(), numberET.getText().toString(), dobEt.getText().toString());
                     registerCall.enqueue(new Callback<RegisterResponse>() {
                         @Override
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

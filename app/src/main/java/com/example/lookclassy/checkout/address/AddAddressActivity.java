@@ -28,15 +28,13 @@ public class AddAddressActivity extends AppCompatActivity {
         static String ADDED_KEY = "ad";
         static String ADDED_DATA_KEY = "adk";
         TextView cancelTV;
-        Window window;
+
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        window = this.getWindow();
-        window.setStatusBarColor(this.getResources().getColor(R.color.primary));
         setContentView(R.layout.activity_add_address);
         cityET = findViewById(R.id.cityET);
         streetET = findViewById(R.id.streetET);

@@ -3,35 +3,28 @@ package com.example.lookclassy.api.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class OrderHistory {
+public class OrderHistory implements Serializable {
 
     @SerializedName("id")
     @Expose
     private Integer id;
-
     @SerializedName("order_date_time")
     @Expose
     private String orderDateTime;
-
     @SerializedName("payment_type")
     @Expose
     private Integer paymentType;
-
     @SerializedName("payment_refrence")
     @Expose
     private String paymentRefrence;
-
     @SerializedName("status")
     @Expose
-    private Integer Status;
-
-
+    private Integer status;
     @SerializedName("bag")
     @Expose
-
-
     private List<Bag> bag = null;
 
     public Integer getId() {
@@ -58,22 +51,20 @@ public class OrderHistory {
         this.paymentType = paymentType;
     }
 
-
-    public Integer getStatus() {
-        return Status;
-    }
-
-    public void setStatus(Integer Status) {
-        this.Status = Status;
-    }
-
-
     public String getPaymentRefrence() {
         return paymentRefrence;
     }
 
     public void setPaymentRefrence(String paymentRefrence) {
         this.paymentRefrence = paymentRefrence;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public List<Bag> getBag() {
@@ -85,4 +76,3 @@ public class OrderHistory {
     }
 
 }
-

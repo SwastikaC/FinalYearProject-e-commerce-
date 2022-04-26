@@ -1,7 +1,6 @@
 package com.example.lookclassy.home.fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,11 +15,12 @@ import android.widget.TextView;
 
 import com.example.lookclassy.More.AboutUsActivity;
 import com.example.lookclassy.More.ContactUsActivity;
-import com.example.lookclassy.More.OrderHistoryActivity;
 import com.example.lookclassy.More.TermsAndConditionActivity;
 import com.example.lookclassy.R;
 import com.example.lookclassy.admin.AdminActivity;
 import com.example.lookclassy.More.ProfileActivity;
+import com.example.lookclassy.checkout.orderComplete.OrderActivity;
+import com.example.lookclassy.checkout.orderComplete.OrderHistoryDetailsActivity;
 import com.example.lookclassy.userAccount.UserAccountActivity;
 import com.example.lookclassy.utils.SharedPrefUtils;
 
@@ -65,7 +65,7 @@ public class MoreFragment extends Fragment {
         OrderhistoryTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), OrderHistoryActivity.class);
+                Intent intent = new Intent(getActivity(), OrderActivity.class);
                 startActivity(intent);
             }
         });

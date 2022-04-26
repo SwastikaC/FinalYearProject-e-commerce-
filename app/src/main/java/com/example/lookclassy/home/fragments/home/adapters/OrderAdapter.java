@@ -4,117 +4,87 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lookclassy.More.OrderHistoryActivity;
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.response.OrderHistory;
 
 import java.util.List;
 
-public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
 
-    List<OrderHistory> orders;
     LayoutInflater layoutInflater;
+    List<OrderHistory> data;
     Context context;
-    OrderAdapter.OrderViewHolder orderViewHolder;
+    OnOrderDetailsClick onOrderDetailsClick;
 
-    public OrderAdapter(List<OrderHistory> orders,Context context) {
-        this.orders = orders;
-        this.context =context;
-        this.layoutInflater=LayoutInflater.from(context);
+    public OrderAdapter(List<OrderHistory> data, Context context)  {
+        this.data = data;
+        this.context = context;
+        layoutInflater = LayoutInflater.from(context);
+
     }
-
 
     @NonNull
     @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new OrderViewHolder(layoutInflater.inflate(R.layout.orderhistory_item, parent, false));
+    public OrderAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        return new ViewHolder(layoutInflater.inflate(R.layout.item_order, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        holder.orderIdTV.setText(orders.get(position).getId());
-        //Double price= orders.get(position).getBag().get()
-        holder.orderNoTV.setText(orders.get(position).getBag().size());
-//        holder.orderNoTV.setText(orders.get(position).getBag().size());
+    public void onBindViewHolder(@NonNull OrderAdapter.ViewHolder holder, int position) {
+
+        OrderHistory orderHistory = data.get(position);
+        holder.Orderid.setText("#"+orderHistory.getId() + " " );
+        holder.dateOrder.setText(orderHistory.getOrderDateTime() + " ");
+
+//        if (orderHistory.getStatus()==0){
+//            holder.ordrStats.setText("Pending");
+//        }else{
+//            holder.ordrStats.setText("Delivered");
+//        }
+//        if (orderHistory.getPaymentType()==1){
+//            holder.paymentMthd.setText("Unpaid");
+//        }else{
+//            holder.paymentMthd.setText("Paid");
+//        }
+
+        holder.paymentStatus.setText(orderHistory.getPaymentRefrence());
     }
 
     @Override
     public int getItemCount() {
-        return orders.size();
+        return data.size();
     }
 
-    public class OrderViewHolder extends RecyclerView.ViewHolder {
-        ImageView productIV, removeCartIV;
-        Button viewDetailsB;
-        TextView orderIdTV, totalPriceTV, orderNoTV;
-
-        public OrderViewHolder(@NonNull View itemView) {
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        TextView Orderid,dateOrder,ordrStats,paymentMthd, paymentStatus;
+        LinearLayout OrderDetails;
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            productIV = (ImageView) itemView.findViewById(R.id.productImage);
-            orderIdTV = itemView.findViewById(R.id.orderId);
-            orderNoTV = itemView.findViewById(R.id.noOfOrderedItemsTV);
-            totalPriceTV = itemView.findViewById(R.id.totalPriceTV);
-            removeCartIV = itemView.findViewById(R.id.removeCartIV);
-            viewDetailsB = itemView.findViewById(R.id.viewDetailsB);
+            Orderid = itemView.findViewById(R.id.Orderid);
+            dateOrder = itemView.findViewById(R.id.dateOrder);
+            ordrStats = itemView.findViewById(R.id.ordrStats);
+            paymentMthd = itemView.findViewById(R.id.paymentMthd);
+            paymentStatus = itemView.findViewById(R.id.paymentStatus);
+            OrderDetails = itemView.findViewById(R.id.orderDetails);
 
+            OrderDetails.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onOrderDetailsClick.onOrderClick(getAdapterPosition());
+                }
+            });
         }
     }
+
+    public interface OnOrderDetailsClick {
+        void onOrderClick (int position);
+
+    }
+    public void setEachHistory(OnOrderDetailsClick onOrderDetailsClick){this.onOrderDetailsClick=onOrderDetailsClick;}
 }
-
-/*public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder> {
-    List<OrderHistory> orders;
-    LayoutInflater layoutInflater;
-    Context context;
-    OrderAdapter.OrderViewHolder orderViewHolder;
-
-    public OrderAdapter(List<OrderHistory> orders,Context context) {
-        this.orders = orders;
-        this.context =context;
-        this.layoutInflater=LayoutInflater.from(context);
-    }
-
-
-    @NonNull
-    @Override
-    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //OrderAdapter orderAdapter= new OrderAdapter();
-        return new OrderViewHolder(layoutInflater.inflate(R.layout.orderhistory_item, parent, false));
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-
-       holder.orderIdTV.setText(orders.get(position).getId());
-        //Double price= orders.get(position).getBag().get()
-       // holder.orderNoTV.setText(orders.get(position).getBag().size());
-    }
-
-    @Override
-    public int getItemCount() {
-        return orders.size();
-    }
-
-
-    public class OrderViewHolder extends RecyclerView.ViewHolder{
-
-        ImageView productIV, removeCartIV;
-        Button viewDetailsB;
-        TextView orderIdTV, totalPriceTV, orderNoTV;
-        public OrderViewHolder(@NonNull View itemView) {
-            super(itemView);
-            productIV = (ImageView)itemView.findViewById(R.id.productImage);
-            orderIdTV = itemView.findViewById(R.id.orderId);
-            orderNoTV = itemView.findViewById(R.id.noOfOrderedItemsTV);
-            totalPriceTV = itemView.findViewById(R.id.totalPriceTV);
-            removeCartIV = itemView.findViewById(R.id.removeCartIV);
-            viewDetailsB= itemView.findViewById(R.id.viewDetailsB);
-        }
-    }
-}*/

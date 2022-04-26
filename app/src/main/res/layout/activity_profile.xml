@@ -60,7 +60,7 @@
             android:layout_gravity="center"
             android:padding="5dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/cod"
+            android:src="@drawable/pp"
             app:civ_border_color="@color/primary"
             app:civ_circle_background_color="@color/primary"/>
         <!--            android:layout_width="wrap_content"-->
@@ -117,8 +117,9 @@
             android:textSize="16dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/fullnameET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Swastika Chettri"
             android:layout_marginLeft="20dp"
@@ -162,11 +163,58 @@
             android:textSize="16dp"
             />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/emailET"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="chhetri.swas@gmail.com"
             android:layout_marginLeft="55dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16dp"/>
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_calender" />
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Birthday"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            />
+
+        <EditText
+            android:id="@+id/bodET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="19/March/2001"
+            android:layout_marginLeft="25dp"
             android:fontFamily="@font/poppins_regular"
             android:textSize="16dp"/>
 
@@ -207,58 +255,23 @@
             android:textColor="@color/black"
             android:textSize="16dp"
             />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="98460447896"
-            android:layout_marginLeft="20dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="16dp"/>
-
-
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
-
-    <LinearLayout
+        <EditText
+        android:id="@+id/phnnumberET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical">
+        android:text="9815164948"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="16dp"/>
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_calender" />
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Birthday"
-            android:textStyle="bold"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginLeft="5dp"
-            android:textColor="@color/black"
-            android:textSize="16dp"
-            />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="19/March/2001"
-            android:layout_marginLeft="25dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="16dp"/>
-
+        <!--        <EditText-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="98460447896"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:fontFamily="@font/poppins_regular"-->
+<!--            android:textSize="16dp"/>-->
 
 
     </LinearLayout>
@@ -274,20 +287,18 @@
 
 
     <LinearLayout
-        android:id="@+id/editLL"
+        android:id="@+id/updateLL"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@drawable/profilebox_shape"
-        android:onClick="onLoginClicked"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/editTV"
             android:layout_width="190dp"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="Edit Profile"
+            android:text="Update"
             android:fontFamily="@font/poppin_semibold"
             android:textColor="@color/primary"
             android:textSize="16sp"
@@ -307,7 +318,7 @@
         android:onClick="onLoginClicked"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/changepwrdTV"
+
             android:layout_width="250dp"
             android:layout_height="50dp"
             android:gravity="center"
@@ -320,5 +331,10 @@
             android:layout_marginLeft="-20dp"/>
 
     </LinearLayout>
-
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </LinearLayout>
