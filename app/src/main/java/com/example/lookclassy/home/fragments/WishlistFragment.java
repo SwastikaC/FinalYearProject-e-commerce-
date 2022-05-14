@@ -1,15 +1,6 @@
 package com.example.lookclassy.home.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,13 +9,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
+
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.ApiClient;
 import com.example.lookclassy.api.response.AllProductResponse;
 import com.example.lookclassy.api.response.Product;
 import com.example.lookclassy.api.response.RegisterResponse;
-import com.example.lookclassy.checkout.CheckOutActivity;
-import com.example.lookclassy.home.fragments.home.adapters.ShopAdapter;
 import com.example.lookclassy.home.fragments.home.adapters.WishListAdapter;
 import com.example.lookclassy.utils.SharedPrefUtils;
 
@@ -34,29 +29,29 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+public class WishlistFragment extends Fragment {
 
-public class WishListFragment extends Fragment {
-    RecyclerView allwishlistProductRV;
+    RecyclerView allWishlistProductRV;
     List<Product> products;
     SwipeRefreshLayout swipeRefresh;
-    ImageView emptyWishlistIV, addedToCart;
+    ImageView emptyWishlistIV;
     AllProductResponse allProductResponse;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_wish_list, container, false);
+        return inflater.inflate(R.layout.fragment_wishlist, container, false);
     }
 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        allwishlistProductRV = view.findViewById(R.id.allwishlistProductRV);
+        allWishlistProductRV = view.findViewById(R.id.allWishlistProductRV);
         swipeRefresh = view.findViewById(R.id.swipeRefresh);
-        addedToCart = view.findViewById(R.id.addedToCart);
         emptyWishlistIV = view.findViewById(R.id.emptyWishlistIV);
+
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -64,6 +59,7 @@ public class WishListFragment extends Fragment {
                 getWishlistItems();
             }
         });
+
         getWishlistItems();
 
     }
@@ -100,22 +96,22 @@ public class WishListFragment extends Fragment {
 
 
     private void showEmptyLayout() {
-
         emptyWishlistIV.setVisibility(View.VISIBLE);
     }
 
 
     private void loadWishList() {
-        allwishlistProductRV.setHasFixedSize(true);
+        allWishlistProductRV.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        allwishlistProductRV.setLayoutManager(layoutManager);
+        allWishlistProductRV.setLayoutManager(layoutManager);
         WishListAdapter wishlistAdapter = new WishListAdapter(products, getContext());
+//        wishlistAdapter.setRemoveEnabled(false);
         wishlistAdapter.setWishCartItemClick(new WishListAdapter.WishlistCartItemClick() {
             @Override
-            public void onRemoveCart(int position) {
+            public void onRemoveWishlist(int position) {
                 String key = SharedPrefUtils.getString(getActivity(), "apk");
-                Call<RegisterResponse> removeCartCall = ApiClient.getClient().deleteFromCart(key, products.get(position).getCartID());
-                removeCartCall.enqueue(new Callback<RegisterResponse>() {
+                Call<RegisterResponse> deleteFromWishlistCall = ApiClient.getClient().deleteFromWishlist(key, products.get(position).getWishlistId());
+                deleteFromWishlistCall.enqueue(new Callback<RegisterResponse>() {
                     @Override
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         if (response.isSuccessful()) {
@@ -131,10 +127,33 @@ public class WishListFragment extends Fragment {
                     public void onFailure(Call<RegisterResponse> call, Throwable t) {
 
                     }
+
+                });
+            }
+
+            @Override
+            public void onMoveWishlistItemToCart(int position) {
+                String key = SharedPrefUtils.getString(getActivity(), "apk");
+                Call<RegisterResponse> wishlistToCartCall = ApiClient.getClient().wishlistToCart(key, products.get(position).getWishlistId());
+                wishlistToCartCall.enqueue(new Callback<RegisterResponse>() {
+                    @Override
+                    public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                        if (response.isSuccessful()) {
+                            if (!response.body().getError()) {
+                                wishlistAdapter.notifyItemChanged(position);
+                                Toast.makeText(getContext(), "Wishlist Item moved to Cart", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<RegisterResponse> call, Throwable t) {
+
+                    }
                 });
             }
         });
-        allwishlistProductRV.setAdapter(wishlistAdapter);
+        allWishlistProductRV.setAdapter(wishlistAdapter);
     }
 
 
@@ -152,3 +171,4 @@ public class WishListFragment extends Fragment {
 //        });
 //    }
 }
+

@@ -42,16 +42,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> 
         holder.Orderid.setText("#"+orderHistory.getId() + " " );
         holder.dateOrder.setText(orderHistory.getOrderDateTime() + " ");
 
-//        if (orderHistory.getStatus()==0){
-//            holder.ordrStats.setText("Pending");
-//        }else{
-//            holder.ordrStats.setText("Delivered");
-//        }
-//        if (orderHistory.getPaymentType()==1){
-//            holder.paymentMthd.setText("Unpaid");
-//        }else{
-//            holder.paymentMthd.setText("Paid");
-//        }
+        if (orderHistory.getStatus()==0){
+            holder.ordrStats.setText("Pending");
+        }else{
+            holder.ordrStats.setText("Delivered");
+        }
+        if (orderHistory.getPaymentType()==1){
+            holder.paymentMthd.setText("Unpaid");
+        }else{
+            holder.paymentMthd.setText("Paid");
+        }
 
         holder.paymentStatus.setText(orderHistory.getPaymentRefrence());
     }

@@ -45,7 +45,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                     public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                         if (response.isSuccessful()) {
                             if (!response.body().getError()) {
-                                Toast.makeText(ChangePasswordActivity.this, "Password Successfully changed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ChangePasswordActivity.this, "Password Successfully Changed", Toast.LENGTH_SHORT).show();
 //                                    SharedPrefUtils.setString(ChangePWActivity.this, DataHolder.PASSWORD_KEY, newPasswordET.getText().toString());
                                 finish();
                             }

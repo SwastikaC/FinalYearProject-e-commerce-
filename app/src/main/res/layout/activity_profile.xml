@@ -45,24 +45,24 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical">-->
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profileIV"
-            android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="80dp"
-            android:layout_gravity="center"
-            android:padding="5dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pp"
-            app:civ_border_color="@color/primary"
-            app:civ_circle_background_color="@color/primary"/>
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/profileIV"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_marginLeft="80dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginRight="80dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:padding="5dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/pp"-->
+<!--            app:civ_border_color="@color/primary"-->
+<!--            app:civ_circle_background_color="@color/primary"/>-->
         <!--            android:layout_width="wrap_content"-->
         <!--            android:layout_height="150dp"-->
         <!--            android:layout_marginLeft="80dp"-->
@@ -73,25 +73,25 @@
         <!--            android:src="@drawable/ic_google"-->
         <!--            app:civ_border_color="@color/primary" />-->
 
-        <TextView
-            android:id="@+id/profileNameTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:lines="2"
-            android:text="Swastika Rawat"
-            android:textColor="@color/primary"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/profileNameTV"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:lines="2"-->
+<!--            android:text="Swastika Rawat"-->
+<!--            android:textColor="@color/primary"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold" />-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/primary" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@color/primary" />-->
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -265,7 +265,7 @@
         android:textSize="16dp"/>
 
 
-        <!--        <EditText-->
+<!--                <EditText-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->
 <!--            android:text="98460447896"-->
@@ -276,13 +276,13 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@android:color/darker_gray"
-        android:layout_marginTop="2dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0.5dp"-->
+<!--        android:background="@android:color/darker_gray"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp"/>-->
 
 
 
@@ -317,18 +317,18 @@
         android:background="@drawable/profilebox_shape"
         android:onClick="onLoginClicked"
         android:orientation="vertical">
-        <TextView
+<!--        <TextView-->
 
-            android:layout_width="250dp"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Change Password"
-            android:fontFamily="@font/poppin_semibold"
-            android:textColor="@color/primary"
-            android:textSize="16sp"
-            android:drawableLeft="@drawable/ic_padlock"
-            android:paddingStart="50dp"
-            android:layout_marginLeft="-20dp"/>
+<!--            android:layout_width="250dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Change Password"-->
+<!--            android:fontFamily="@font/poppin_semibold"-->
+<!--            android:textColor="@color/primary"-->
+<!--            android:textSize="16sp"-->
+<!--            android:drawableLeft="@drawable/ic_padlock"-->
+<!--            android:paddingStart="50dp"-->
+<!--            android:layout_marginLeft="-20dp"/>-->
 
     </LinearLayout>
     <ProgressBar

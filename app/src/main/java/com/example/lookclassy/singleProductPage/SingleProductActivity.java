@@ -38,7 +38,7 @@ public class SingleProductActivity extends AppCompatActivity {
     Product product;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV,  addToWishlist;
+    ImageView backIV, plusIV, minusIV,  addwishlisttLL;
     TextView name, price, desc, oldPrice, quantityTV;
     LinearLayout addToCartLL;
 
@@ -60,7 +60,7 @@ public class SingleProductActivity extends AppCompatActivity {
         quantityTV = findViewById(R.id.quantityTV);
         oldPrice = findViewById(R.id.productOldPriceTV);
         addToCartLL = findViewById(R.id.addToCartLL);
-        addToWishlist = findViewById(R.id.addToWishlist);
+        addwishlisttLL = findViewById(R.id.addwishlisttLL);
         addingCartPR = findViewById(R.id.addingCartPR);
         desc = findViewById(R.id.decTV);
         plusIV = findViewById(R.id.plusIV);
@@ -194,7 +194,7 @@ public class SingleProductActivity extends AppCompatActivity {
         });
 
         //adding item to wishlist
-        addToWishlist.setOnClickListener(v ->{
+        addwishlisttLL.setOnClickListener(v ->{
             if (!isAdding){
                 isAdding = true;
                 String apikey = SharedPrefUtils.getString(this,getString(R.string.api_key));
@@ -208,7 +208,6 @@ public class SingleProductActivity extends AppCompatActivity {
                             }
                         }
                         isAdding = false;
-                        Toast.makeText(SingleProductActivity.this, "Removed from  Wishlist", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -219,7 +218,6 @@ public class SingleProductActivity extends AppCompatActivity {
                 });
             }
         });
-
 
     }
 

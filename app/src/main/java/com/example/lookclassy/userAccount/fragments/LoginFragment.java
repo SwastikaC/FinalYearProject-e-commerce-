@@ -65,7 +65,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
                         if (response.isSuccessful()) {
                             if (loginResponse.getError()) {
                                 System.out.println("222222221222222222222 my error  is: " + loginResponse.getError());
-
+                                Toast.makeText(getActivity(), "Login failed. Incorrect credentials", Toast.LENGTH_SHORT).show();
                             } else {
                                 Toast.makeText(getActivity(), "Welcome", Toast.LENGTH_LONG).show();
                                 SharedPrefUtils.setBoolean(getActivity(), getString(R.string.isLogged), true);

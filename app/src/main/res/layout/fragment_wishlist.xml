@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".home.fragments.WishListFragment">
+    tools:context=".home.fragments.WishlistFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -17,21 +17,6 @@
             android:layout_height="wrap_content"
             android:background="@color/primary">
 
-<!--            <ImageView-->
-<!--                android:id="@+id/wishlistbackIV"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="@dimen/large_spacing"-->
-<!--                android:layout_marginTop="@dimen/large_spacing"-->
-<!--                android:layout_marginEnd="@dimen/large_spacing"-->
-<!--                android:layout_marginBottom="@dimen/large_spacing"-->
-<!--                android:elevation="20dp"-->
-<!--                android:background="@color/primary"-->
-<!--                android:src="@drawable/ic_back"-->
-<!--                app:tint="@color/white" />-->
-
-
-
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,9 +25,7 @@
                 android:text="My Wishlist"
                 android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-
-                />
+                android:textSize="18sp" />
 
 
         </androidx.appcompat.widget.Toolbar>
@@ -57,19 +40,19 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
+
             <ImageView
                 android:id="@+id/emptyWishlistIV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
-                android:src="@drawable/ic_google"
+                android:src="@drawable/emptywishlist"
                 android:visibility="gone" />
 
-
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/allwishlistProductRV"
+                android:id="@+id/allWishlistProductRV"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="@dimen/normal_spacing" />

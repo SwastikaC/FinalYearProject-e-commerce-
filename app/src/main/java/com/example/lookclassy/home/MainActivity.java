@@ -14,7 +14,7 @@ import com.example.lookclassy.home.fragments.CartFragment;
 import com.example.lookclassy.home.fragments.CategoryFragment;
 import com.example.lookclassy.home.fragments.home.HomeFragment;
 import com.example.lookclassy.home.fragments.MoreFragment;
-import com.example.lookclassy.home.fragments.WishListFragment;
+import com.example.lookclassy.home.fragments.WishlistFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment homeFragment;
         CategoryFragment categoryFragment;
         CartFragment cartFragment;
-        WishListFragment wishListFragment;
+        WishlistFragment wishListFragment;
         MoreFragment moreFragment;
         Fragment currentFragment;
 
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (item.getTitle().equals("Wishlist")) {
                         if (wishListFragment == null)
-                            wishListFragment = new WishListFragment();
+                            wishListFragment = new WishlistFragment();
                         changeFragment(wishListFragment);
                         return true;
 

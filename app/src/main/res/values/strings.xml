@@ -7,7 +7,7 @@
     <string name="login">Login</string>
     <string name="email_id">Email ID</string>
     <string name="forget">Forget ?</string>
-
+    <string name="password">password</string>
 
     <string name="sign_up">Register</string>
 

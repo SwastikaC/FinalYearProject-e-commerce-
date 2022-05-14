@@ -57,7 +57,6 @@ public class HomeFragment extends Fragment {
     ProgressBar loadingProgress;
     SliderView imageSlider;
     TextView viewAllTV, searchIt;
-    ;
     LinearLayout searchLL;
     BottomNavigationView bottomNavigationView;
     TextView nameTV;

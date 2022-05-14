@@ -77,8 +77,12 @@ public interface ApiService {
     @DELETE("/api/v1/category")
     Call<RegisterResponse> deleteCategory(@Header("api_key") String apikey, @Query("c_id") int id);
 
-    @GET("/api/v1/wishlist")
-    Call<AllProductResponse> wishlist(@Header("api_key") String apikey);
+
+
+
+
+//    @GET("/api/v1/wishlist")
+//    Call<AllProductResponse> wishlist(@Header("api_key") String apikey);
 
     @Multipart
     @POST("/api/v1/upload-product")
@@ -114,6 +118,10 @@ public interface ApiService {
 
     @DELETE("/api/v1/wishlist")
     Call<RegisterResponse> deleteFromWishlist(@Header("api_key") String apikey, @Query("wishlist_id") int wishlistID);
+
+    @FormUrlEncoded
+    @POST("/api/v1/wishlistToCart")
+    Call<RegisterResponse> wishlistToCart(@Header("api_key") String apikey, @Field("wishlist_id") int wishlistID);
 
     @FormUrlEncoded
     @POST("/api/v1/address")
