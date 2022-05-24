@@ -143,7 +143,7 @@ public interface ApiService {
 //    Call<RegisterResponse> forgotpassword(String key, String toString);
 
     @FormUrlEncoded
-    @POST("api/v1/forget-password")
+    @POST("api/v1/update-password")
     Call<RegisterResponse> forgotpassword(@Header("api_key") String apikey, @Field("password") String password);
 
 //    Call<RegisterResponse> updateProfile(String key, String names, String email, String dateofbirth, String contact);

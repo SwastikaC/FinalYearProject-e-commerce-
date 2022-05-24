@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.response.Bag;
+import com.squareup.picasso.Picasso;
 
 import java.io.Serializable;
 import java.util.List;
@@ -43,6 +45,9 @@ public class historyDetailsAdapter extends RecyclerView.Adapter<historyDetailsAd
         holder.unitPrice.setText(bag.getUnitPrice() + "");
         holder.orderQuantity.setText(bag.getQuantity()+"");
         holder.orderProduct.setText(bag.getProduct().getName());
+        Picasso.get().load(bag.getProduct ().getImages().get(0)).into(holder.productImages);
+
+
     }
 
     @Override
@@ -52,11 +57,13 @@ public class historyDetailsAdapter extends RecyclerView.Adapter<historyDetailsAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView unitPrice, orderProduct, orderQuantity;
+        ImageView productImages;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             unitPrice=itemView.findViewById(R.id.unitPrice);
             orderProduct=itemView.findViewById(R.id.orderProduct);
             orderQuantity=itemView.findViewById(R.id.orderQuantity);
+            productImages=itemView.findViewById(R.id.productImages);
         }
     }
 

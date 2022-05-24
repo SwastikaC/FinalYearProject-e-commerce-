@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -59,6 +60,7 @@ public class HomeFragment extends Fragment {
     TextView viewAllTV, searchIt;
     LinearLayout searchLL;
     BottomNavigationView bottomNavigationView;
+    SwipeRefreshLayout swipeRefreshH;
     TextView nameTV;
     ImageView addToWishlist;
     CircleImageView userProfileIV;
@@ -88,6 +90,7 @@ public class HomeFragment extends Fragment {
         searchLL = view.findViewById(R.id.searchLL);
         nameTV = view.findViewById(R.id.nameTV);
         userProfileIV = view.findViewById(R.id.userProfileIV);
+        swipeRefreshH = view.findViewById(R.id.swipeRefreshH);
         searchIt = view.findViewById(R.id.searchIt);
         searchClickListeners();
         serverCall();
@@ -105,11 +108,27 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        swipeRefreshH.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                swipeRefreshH.setRefreshing(true);
+                getname();
+            }
+        });
+
+        getname();
     }
+
+
 
     private void getname() {
         nameTV.setText(SharedPrefUtils.getString(getActivity(), "nk"));
+        swipeRefreshH.setRefreshing(false);
+
+
     }
+
 
     private void setClickListeners() {
         viewAllTV.setOnClickListener(new View.OnClickListener() {
@@ -143,6 +162,8 @@ public class HomeFragment extends Fragment {
             public void onFailure(Call<SliderResponse> call, Throwable t) {
 
             }
+
+
         });
     }
 

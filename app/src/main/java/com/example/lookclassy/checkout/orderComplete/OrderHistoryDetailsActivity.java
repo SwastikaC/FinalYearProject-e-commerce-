@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.lookclassy.R;
 import com.example.lookclassy.api.response.Bag;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class OrderHistoryDetailsActivity extends AppCompatActivity {
         RecyclerView orderDetailsRv;
-        ImageView backIvo;
+        TextView backIvo;
         List<Bag> data = new ArrayList<Bag>();
         historyDetailsAdapter detailsAdapter;
         Bag bag;

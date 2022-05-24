@@ -38,7 +38,7 @@ public class SingleProductActivity extends AppCompatActivity {
     Product product;
     SliderView imageSlider;
     ProgressBar addingCartPR;
-    ImageView backIV, plusIV, minusIV,  addwishlisttLL;
+    ImageView backIV, plusIV, minusIV, addwishlisttLL;
     TextView name, price, desc, oldPrice, quantityTV;
     LinearLayout addToCartLL;
 
@@ -70,8 +70,10 @@ public class SingleProductActivity extends AppCompatActivity {
         if (getIntent().getSerializableExtra(DATA_KEY) != null) {
             product = (Product) getIntent().getSerializableExtra(DATA_KEY);
             setProduct(product);
-        } else if (getIntent().getSerializableExtra(SINGLE_DATA_KEY) != null)
-            getProductOnline(getIntent().getIntExtra(SINGLE_DATA_KEY, 1));
+        }
+
+//        else if (getIntent().getSerializableExtra(SINGLE_DATA_KEY) != null)
+//            getProductOnline(getIntent().getIntExtra(SINGLE_DATA_KEY, 1));
 
         setOnclickListners();
     }
@@ -194,18 +196,24 @@ public class SingleProductActivity extends AppCompatActivity {
         });
 
         //adding item to wishlist
-        addwishlisttLL.setOnClickListener(v ->{
-            if (!isAdding){
+        addwishlisttLL.setOnClickListener(v -> {
+            if (!isAdding) {
                 isAdding = true;
-                String apikey = SharedPrefUtils.getString(this,getString(R.string.api_key));
-                Call<AllProductResponse> wishlistCall = ApiClient.getClient().addtowishlist(apikey,product.getId());
+                String apikey = SharedPrefUtils.getString(this, getString(R.string.api_key));
+                Call<AllProductResponse> wishlistCall = ApiClient.getClient().addtowishlist(apikey, product.getId());
                 wishlistCall.enqueue(new Callback<AllProductResponse>() {
                     @Override
                     public void onResponse(Call<AllProductResponse> call, Response<AllProductResponse> response) {
-                        if (response.isSuccessful()){
-                            if (!response.body().getError()){
-                                Toast.makeText(SingleProductActivity.this, "Added to Wishlist", Toast.LENGTH_SHORT).show();
+                        if (response.isSuccessful()) {
+                            if (!response.body().getError()) {
+                                if (response.code() == 201) {
+                                    Toast.makeText(SingleProductActivity.this, "Added to Wishlist", Toast.LENGTH_SHORT).show();
+                                } else if (response.code() == 200) {
+                                    Toast.makeText(SingleProductActivity.this, "Removed from WishList", Toast.LENGTH_SHORT).show();
+
+                                }
                             }
+
                         }
                         isAdding = false;
                     }

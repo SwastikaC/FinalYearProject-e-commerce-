@@ -24,7 +24,8 @@
         tools:replace="android:theme">
         <activity
             android:name=".checkout.orderComplete.OrderHistoryDetailsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
 
         <activity
             android:name=".checkout.orderComplete.OrderActivity"

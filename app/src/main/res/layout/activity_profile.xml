@@ -265,24 +265,9 @@
         android:textSize="16dp"/>
 
 
-<!--                <EditText-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="98460447896"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:fontFamily="@font/poppins_regular"-->
-<!--            android:textSize="16dp"/>-->
 
 
     </LinearLayout>
-
-<!--    <View-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0.5dp"-->
-<!--        android:background="@android:color/darker_gray"-->
-<!--        android:layout_marginTop="2dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:layout_marginRight="20dp"/>-->
 
 
 
@@ -317,18 +302,18 @@
         android:background="@drawable/profilebox_shape"
         android:onClick="onLoginClicked"
         android:orientation="vertical">
-<!--        <TextView-->
+        <TextView
 
-<!--            android:layout_width="250dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="Change Password"-->
-<!--            android:fontFamily="@font/poppin_semibold"-->
-<!--            android:textColor="@color/primary"-->
-<!--            android:textSize="16sp"-->
-<!--            android:drawableLeft="@drawable/ic_padlock"-->
-<!--            android:paddingStart="50dp"-->
-<!--            android:layout_marginLeft="-20dp"/>-->
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Change Password"
+            android:fontFamily="@font/poppin_semibold"
+            android:textColor="@color/primary"
+            android:textSize="16sp"
+            android:drawableLeft="@drawable/ic_padlock"
+            android:paddingStart="50dp"
+            android:layout_marginLeft="-20dp"/>
 
     </LinearLayout>
     <ProgressBar

@@ -134,6 +134,7 @@ public class CheckOutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 p_type = 2;
+                p_ref = "khalti";
                 khaltiIV.setBackground(getResources().getDrawable(R.drawable.box_shape_selected));
                 codIV.setBackground(getResources().getDrawable(R.drawable.box_shape));
 

@@ -47,7 +47,7 @@ public class RegisterFragment extends Fragment {
             public void onClick(View v) {
                 if (validate()) {
                     toggleLoading(true);
-                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString(), numberET.getText().toString(), dobEt.getText().toString());
+                    Call<RegisterResponse> registerCall = ApiClient.getClient().register(nameET.getText().toString(), emailET.getText().toString(), passwordET.getText().toString(), dobEt.getText().toString(), numberET.getText().toString());
                     registerCall.enqueue(new Callback<RegisterResponse>() {
                         @Override
                         public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {

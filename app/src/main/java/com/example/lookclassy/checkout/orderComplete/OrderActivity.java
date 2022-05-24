@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +29,7 @@ public class OrderActivity extends AppCompatActivity implements OrderAdapter.OnO
     RecyclerView orderRV;
     List<OrderHistory> data;
     OrderAdapter orderAdapter;
-    ImageView backIVO;
+    TextView backIVO;
 
 
 

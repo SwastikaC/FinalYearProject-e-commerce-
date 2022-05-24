@@ -6,12 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".home.fragments.home.HomeFragment">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+        android:id="@+id/swipeRefreshH"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.fragments.home.HomeFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-
 
 
         <LinearLayout
@@ -19,27 +23,32 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/normal_spacing">
+               android:paddingEnd="@dimen/normal_spacing"
+                android:paddingTop="7dp"
+                android:paddingStart="20dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="5dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Hello, "
                             android:fontFamily="@font/poppins_regular"
+                            android:text="Hello, "
                             android:textColor="@color/black"
                             android:textSize="14sp" />
 
@@ -49,7 +58,7 @@
                             android:layout_height="wrap_content"
                             android:text=" Swastika"
                             android:textColor="@color/primary"
-                            android:textSize="20sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -57,17 +66,17 @@
                             android:layout_height="wrap_content"
                             android:text=" !"
                             android:textColor="@color/primary"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Meet your True Fashion Needs"
                         android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_regular"
                         android:textSize="14sp"
                         android:textStyle="normal" />
 
@@ -76,8 +85,8 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/userProfileIV"
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_alignParentRight="true"
                     android:padding="5dp"
                     android:scaleType="centerCrop"
@@ -145,7 +154,10 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="@dimen/normal_spacing"
+                android:layout_marginBottom="@dimen/normal_spacing"
+                android:layout_marginEnd="25dp"
                 app:cardCornerRadius="6dp">
 
                 <com.smarteist.autoimageslider.SliderView
@@ -254,6 +266,11 @@
 
 
     </androidx.core.widget.NestedScrollView>
+
+
 </LinearLayout>
     </androidx.core.widget.NestedScrollView>
-</LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </LinearLayout>

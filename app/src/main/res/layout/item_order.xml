@@ -5,7 +5,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp"
-    android:background="@drawable/box_shape"
+    android:background="@drawable/rectange_box"
+    android:backgroundTint="#F1F6FD"
     android:layout_margin="10dp">
 
     <TextView
@@ -24,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date"
-        android:textColor="#03A9F4"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:fontFamily="@font/poppins_regular"
         />
@@ -33,7 +34,7 @@
         android:id="@+id/ordrStats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#D52E10"
+        android:textColor="@color/primary"
         android:text="Order Status"
         android:fontFamily="@font/poppins_regular"
         android:textSize="16dp"
