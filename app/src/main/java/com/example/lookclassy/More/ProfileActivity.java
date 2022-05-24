@@ -78,6 +78,13 @@ public class ProfileActivity extends AppCompatActivity {
                         if (response.isSuccessful()) {
                             if (!response.body().getError()) {
                                 Toast.makeText(ProfileActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                                SharedPrefUtils.setString(ProfileActivity.this, getString(R.string.name_key), names);
+                                SharedPrefUtils.setString(ProfileActivity.this, getString(R.string.email_id), email);
+                                SharedPrefUtils.setString(ProfileActivity.this, getString(R.string.dateofbirth), dateofbirth);
+                                SharedPrefUtils.setString(ProfileActivity.this, getString(R.string.phonenumber), phonenumber);
+
+
+                                Toast.makeText(ProfileActivity.this, response.body().getMessage(), Toast.LENGTH_LONG).show();
 
                             }
                         }
